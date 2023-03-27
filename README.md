@@ -6,3 +6,5 @@ Data Structures and Algorithms course by [Kunal Kushwah](https://www.youtube.com
 > I have uploaded all the solutions of the questions done by me, and also the solution walkthroughs by Kunal Kushwah.
 
 > Major Interview Questions are also uploaded.
+
+> All the Lecture "Notes" and "Code" are Provided [Here](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java)
