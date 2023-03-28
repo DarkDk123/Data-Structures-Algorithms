@@ -14,7 +14,7 @@ public class basic {
         input.close();
 
 
-        // // Data Types -> Primitives
+// // Data Types -> Primitives
         
         // int roll = 25;
         // char love = 'U';
@@ -22,5 +22,13 @@ public class basic {
         // double attemps = 99212.1245412;
         // long LargeInt = 144579854542L;
         // boolean check = true;
+
+        
+// Type Casting or Type Conversion
+
+        // float a = 10.25f;
+        // System.out.println("Float to Int: " + (int)a);
+
+        // Another topic named "type promotion or Internal Type Casting"
     }
 }
