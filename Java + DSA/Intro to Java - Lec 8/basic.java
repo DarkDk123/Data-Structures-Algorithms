@@ -12,5 +12,15 @@ public class basic {
         
         // Input Stream for Input must be closed to supress error "Resource Leak";
         input.close();
+
+
+        // // Data Types -> Primitives
+        
+        // int roll = 25;
+        // char love = 'U';
+        // float life = 19.1f;
+        // double attemps = 99212.1245412;
+        // long LargeInt = 144579854542L;
+        // boolean check = true;
     }
 }
