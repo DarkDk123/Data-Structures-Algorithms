@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class basic {
+public class Basic {
     public static void main(String[] args) {
         // Printing in Java.
         System.out.println("Printing Output to Command Line.");
