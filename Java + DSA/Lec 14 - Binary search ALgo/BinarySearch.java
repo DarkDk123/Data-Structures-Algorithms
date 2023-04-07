@@ -14,11 +14,7 @@ public class BinarySearch {
         int start = 0;
         int end = array.length - 1;
 
-        // Edge Case required for saving one unnecessary Iteration of while loop.
-        if (array.length == 0) {
-            return -1;
-        }
-
+        // loop won't start if array is Empty i.e. (0<-1=false)
         while (start <= end) {
             /*
              * Using this cause same mathematical answer but calculates mid by substraction
