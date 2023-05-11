@@ -1,7 +1,7 @@
 /**
  * Q. Find Whether a given string is a 'Palindrome' or not.
  */
-public class Q_Palindrome {
+public class Q1_Palindrome {
     public static void main(String[] args){
         // Main.
         System.out.println(isPalindrome("nitin"));
@@ -21,6 +21,20 @@ public class Q_Palindrome {
             end--;
         }
         // it's a palindrome, return true.
+        return true;
+    }
+
+// Palindrome Solution by Kunal.
+    static boolean isPalindrome2(String strToCheck){
+        // Empty string or null string.
+        if (strToCheck.length()==0 || strToCheck == null) return true;
+
+        for(int i=0; i<=strToCheck.length()/2; i++){
+            char start = strToCheck.charAt(i);
+            char end = strToCheck.charAt(strToCheck.length()-1-i);
+            
+            if (start!=end) return false;
+        }
         return true;
     }
 }
