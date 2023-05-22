@@ -1,0 +1,26 @@
+    * Steps to Solve Recursion. *
+
+(1) Find if you can break down the problem into smaller problems.
+(2) Discover the "Recurrence relation" of the problem if needed
+(3) Draw a Recursion tree and understand.
+(4) * Understand the flow of functions, their place in stack, how they are being poped etc. *
+    * Understand left tree function calls & right tree func calls seperately, their order of execution.*
+(5) See how & what values are returned at each step, where the func ends, base-condition etc.
+(6) Use pen-paper to understand the flow of functions.
+
+* Tail Recursion: "When the function from which recursion starts lies at the last line of the func.
+                    it's called a tail recursion."
+                
+                
+Note: Previous Fibonacci Function isn't a tail recursion. First, it'll wait for F(n-1) to return an answer.
+      then it'll call F(n-2)
+
+
+Imp: Understand the variables used in recursion.
+        (1) Used in Arguments.
+        (2) Used in Return Types.
+        (3) Used in Body of the Func.
+
+* Types of Recurrence relation - 
+        (1) Linear rr = Problem is divided linearly, by smaller chunks. (Fibonacci Question)
+        (2) Divide & Conquer rr = Problem is divided into 2 or multiple halfs, much efficient (Recursive Binary Search)
