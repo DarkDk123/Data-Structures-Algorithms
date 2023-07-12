@@ -98,6 +98,14 @@ The general form of the Akra-Bazzi formula is as follows:
 
 ---
 
+### **Exception :** Duplicate Roots 
+<br>
+
+If we got multiple duplicate roots  from the **Characteristics Equation** from **Step 1**, then use missing roots from the form below : 
+
+<br>
+
+<img title="a title" alt="Alt text" src="images/IfRepeatedRoots.jpg">
 
 
 
