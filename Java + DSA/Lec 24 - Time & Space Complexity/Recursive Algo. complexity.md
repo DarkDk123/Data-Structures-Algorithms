@@ -60,7 +60,7 @@ The general form of the Akra-Bazzi formula is as follows:
 3. Easier over ***master's theorem & drawing tree***.
 ---
 
-## Method to Solve Linear Recurrences :
+### **Method to Solve Linear Recurrences :**
 
 **Form of Linear recursions:** 
 
@@ -71,7 +71,8 @@ The general form of the Akra-Bazzi formula is as follows:
 
 **Step 1 :**
 
-* put f(x)= β<sup></sup> (beta<sup>x</sup>), f(x-1)=β<sup>x-1</sup> and so on.
+* put f(x)= β<sup>x</sup> (beta<sup>x</sup>), f(x-1)=β<sup>x-1</sup> and so on.
+* The simplified eq. is called ***Characteristic eq. of recurrence***.
 * Solve the simplified equation and get all the roots.
 
 **Step 2 :**
