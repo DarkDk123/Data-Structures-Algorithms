@@ -60,7 +60,7 @@ The general form of the Akra-Bazzi formula is as follows:
 3. Easier over ***master's theorem & drawing tree***.
 ---
 
-### **Method to Solve Linear Recurrences :**
+### **Method to Solve 'Homogeneous' Linear Recurrences :**
 
 **Form of Linear recursions:** 
 
@@ -109,3 +109,78 @@ If we got multiple duplicate roots  from the **Characteristics Equation** from *
 
 
 
+---
+## **Non-Homogeneous Linear Reccurrences:**
+
+* A Non-Homogeneous Linear Reccurrence is just have an extra function **'g(x)'** at the end of the given form:
+  
+  <img title="a title" alt="Alt text" src="images/quadratic.png"> + **g(x)**
+
+
+* A Little Different approach is used to solve these Linear Reccurrences.
+
+ ---
+
+**Step 1 :**
+
+* Just Put **g(x) =0** in the given equation.
+
+The Below Steps are Same as Homogeneous Linear Reccurrence : 
+* put f(x)= β<sup>x</sup> (beta<sup>x</sup>), f(x-1)=β<sup>x-1</sup> and so on.
+  
+* The simplified eq. is called ***Characteristic eq. of recurrence***.
+
+* Solve the Characteristic equation and get all the roots.
+
+* Build a equation by substituting this roots as '*x1, x2 ... xn*' in : 
+
+  <img title="a title" alt="Alt text" src="images/step-2.png"> **where all *n* lie in the power**.
+
+* It's Called **General/Homogeneous Solution**. Consider it as eq. (1)
+
+**Step 2 :** 
+
+Find Particular Solution:
+
+* Put given **g(x)** equal to the **Characteristic Equation** | *Consider it **Eq. (2)***.
+  
+* Now guess something similar to **g(x), [Guessing Method is at the bottom.](#guess-method)** You'll have Something like: **f(x)=C*g(x)**. | *Consider it **Eq.(3)***
+  
+  *i.e. if g(n) = n <sup>2</sup>, guess a degree 2 polynomial.*
+
+* Put f(x) = guessed, in **eq. (2)**, then Find the **Value of all 'C'.**
+* Now Put all the **'C'**  in **eq. (3).**
+* You'll have the **Particular Solution**. 
+
+**Step 3 :**
+* Add Both 'Homogeneous' & 'particular' solutions together. | **eq. (4)**
+  
+* Now use given solutions like: **f(0) = 0** etc. to find value of Constants i.e. **C1, C2** etc.
+  
+* Put these **C** values in eq. (4). **| It's Your Answer**.
+
+---
+## **Guess Method:**
+### How to Guess For Particular Solution at Step 2.
+
+1. If **g(x)** is a **Exponential** like **2<sup>n</sup>**, then:
+          
+        Add Constants as Coefficients.
+        i.e. a*2^n etc.
+
+2. If **g(x)** is a Polynomial like **n <sup>2</sup> - 1**, then:
+   
+        Guess Polynomial of same degree
+        i.e. a*x^2 + b*x * c
+
+3. If **g(x)** is a Combination (Exponential + Polynomial).
+
+        Then Do the same as above two steps, just apply them distinctly. 
+
+* If with above steps, you fail to get the correct Particular solution.
+  
+  1.  For Example you guessed **f(x)=a*2<sup>n<sup>** & it fails.
+   
+  2.  Then Guess **f(x)=(a*n+b)\*2<sup>n</sup>**.
+  3.  If Fails again then increase polynomial power | guess **f(x)=(a*n+b)\*2<sup>n</sup>**.
+  4.  Keep Trying untill it works.
