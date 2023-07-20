@@ -11,11 +11,22 @@
 
 public class FindN_XOR {
     public static void main(String[] args) {
-        int n = 17;
+        int a = 9;
+        int n = 20;
 
         System.out.printf("The XOR from 0 to %d is : %d\n", n, doXOR(n));
+
+        System.out.printf("The XOR from %d to %d is : %d\n", a, n, doXORRange(a, n));
     }
 
+
+    // For XOR Operation from a to b.
+    static int doXORRange(int a, int b){
+        int result = doXOR(b) ^ doXOR(a-1);
+        return result;
+    }
+
+    // For XOR operation from 0 to n.
     static int doXOR(int n){
         switch (n%4) {
             case 0:
