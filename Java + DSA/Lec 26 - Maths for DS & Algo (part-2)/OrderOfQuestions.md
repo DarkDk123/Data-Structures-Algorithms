@@ -3,3 +3,4 @@
 1. PrimeNumber.java
 2. FindPrimeInRange.java
 3. squareRoot.java
+4. newtonSquareRoot.java    | Newton Raphson Method.
