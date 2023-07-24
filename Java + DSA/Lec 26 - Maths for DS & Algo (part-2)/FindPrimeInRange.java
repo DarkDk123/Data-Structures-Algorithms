@@ -46,3 +46,33 @@ public class FindPrimeInRange {
         
     }
 }
+
+/**
+ *
+ *  ->  Analysed the Complexities of Sieve of Eratosthenes :
+ * 
+ *                  *Space Complexity = O(n).*
+ *  
+ *  As we take an extra Boolean array of size 'n' in the algorithm.
+ *  It increases the Auxiliary Space to 'n', hence Total Space Complexity is "O(n)".
+ * 
+ *                      
+ *                     *Time Complexity* 
+ * 
+ *  As by a Sample run, we found our algorithm's overall steps to be like :
+ * 
+ *      =>   n/2  + n/3 + n/5 + n/7 ... upto n/p 
+ *      
+ *          Where "p = sqrt(n) "
+ *             
+ *          because any larger prime's multiples would have been already marked off by smaller primes.
+ *          
+ *       These simplifies to: 
+ *      =>  n(1/2 + 1/3 + 1/5 + 1/7 + 1/11 +...+ 1/p).
+ *      
+ *        It constitues a Harmonic Series:
+ *          Hence this Harmonic Series of Prime Numbers denotes Complexity of "Log(Log(n))"
+ * 
+ *      The Final Time Complexity is : "nLog(Log(n))"
+ * 
+ */
