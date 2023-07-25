@@ -5,4 +5,5 @@
 3. squareRoot.java
 4. newtonSquareRoot.java    | Newton Raphson Method.
 5. factorOfNumber.java      | via Finding Pattern.
-6. 
+
+* Learned About Some Modulo Properties.
