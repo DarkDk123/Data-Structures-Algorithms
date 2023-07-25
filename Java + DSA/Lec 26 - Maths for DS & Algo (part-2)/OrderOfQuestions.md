@@ -7,3 +7,6 @@
 5. factorOfNumber.java      | via Finding Pattern.
 
 * Learned About Some Modulo Properties.
+* HCF - Highest Common Factor | Die-Hard Problem. 
+
+6. EuclideanHCF.java | Method to Find HCF. 
