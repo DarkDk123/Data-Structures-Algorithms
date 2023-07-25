@@ -10,3 +10,4 @@
 * HCF - Highest Common Factor | Die-Hard Problem. 
 
 6. EuclideanHCF.java | Method to Find HCF. 
+7. EuclideanHCF.java - Updated | LCM Formula | Proof of that Formula
