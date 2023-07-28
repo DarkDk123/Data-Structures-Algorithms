@@ -5,3 +5,4 @@ of the previous "Intro to Recursion" Lecture.
 
 1. numberTillN.java | Printing (N to 1) & (1 to N). | also both combined. | Combined reverse.
 2. recurFact.java  | Factorial using recursion
+3. recurFact.java  | Find Factorial Using recursion | also sum of nums from n to 1.
