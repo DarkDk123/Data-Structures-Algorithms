@@ -10,3 +10,4 @@ of the previous "Intro to Recursion" Lecture.
 5. productDigit.java | Find product of all digits of an Integer.
 
 Learned About Post-Pre Increment & Decrement Operators.
+6. revNum.java  | Reverse a given number.
