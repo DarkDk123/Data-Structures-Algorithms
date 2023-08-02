@@ -13,3 +13,4 @@ Learned About Post-Pre Increment & Decrement Operators.
 6. revNum.java  | Reverse a given number.
 7. palindrome.java | Find palindrome of a number.
 8. countZero.java  | Count frequency of zeroes in a number using recursion.
+9. countSteps.java | Counting no. of steps to reduce a no. to Zero.
