@@ -8,7 +8,7 @@ import java.util.Arrays;
  * "Mainly used in other sort algos for large data.
  *  and for Partially sorted Data Structures."
  * 
- * Stable Sorting Algorith: "A Sorting Algo which Maintains
+ * Stable Sorting Algorithm: "A Sorting Algo which Maintains
  * the existing Order of Equal Elements"
  */
 public class insertionSort {
