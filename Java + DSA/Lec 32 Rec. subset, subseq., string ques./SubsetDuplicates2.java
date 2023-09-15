@@ -1,16 +1,15 @@
 /**
- *  Q. Find all distinct subsets of a given array that contains duplicates.
+ *  Q. Find all the distinct subsets of a given array containing multiple Duplicates.
  * 
- *  "This Approach only copes with dual duplicates, not more than 2"
  */
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SubsetDuplicates{
+public class SubsetDuplicates2{
 
     public static void main(String[] args) {
-        int[] array = {2, 1, 2};
+        int[] array = {1, 1, 1};
         ArrayList<ArrayList<Integer>> answer = subsetIter(array);
 
         // Print Answer List
@@ -33,16 +32,19 @@ public class SubsetDuplicates{
         Arrays.sort(array);
 
         int pnum = array[0]; // to identify duplicates
+        int startIdx = 0;        
+        
         // For Loops
         for(int num:array){
             int n = finalList.size();
-            for(int i=((pnum==num)?n/2:0); i<n; i++){
+            for(int i=((pnum==num)?startIdx:0); i<n; i++){
                 ArrayList<Integer> internal = new ArrayList<Integer>(finalList.get(i));
                 internal.add(num);
                 finalList.add(internal);
             }
 
-            pnum=num; 
+            pnum=num;
+            startIdx = n; 
         }
         
         return finalList;
