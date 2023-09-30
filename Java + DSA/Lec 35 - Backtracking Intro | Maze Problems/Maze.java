@@ -1,7 +1,7 @@
 /**
  * Q. Maze Problem | Total Ways to get to the desired position.
  * 
- *  It actually uses Recursion Only (not backtracking now).
+ *  It actually uses Recursion Only (not backtracking now). (Edit: Actually it's backtracking)
  *  A Maze Problem using just Right & Down as moves.
  */
 public class Maze{
