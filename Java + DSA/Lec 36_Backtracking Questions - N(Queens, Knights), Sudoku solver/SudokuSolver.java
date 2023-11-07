@@ -51,6 +51,7 @@ class SudokuSolver {
             if(posValid(r, c, board, sub)){
                 board[r][c] = sub;
                 ans = sudokuSolver(board, r, c+1);
+                if (ans) return ans;
                 if(!ans) board[r][c] = '.'; // Backtrack
             }
         }
