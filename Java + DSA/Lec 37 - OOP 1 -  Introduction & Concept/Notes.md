@@ -10,3 +10,15 @@ The official text notes are [here](https://github.com/kunal-kushwaha/DSA-Bootcam
 
 ## Topics Learned :
 
+- Classes
+- Objects
+- Methods
+- Attributes
+- Dot Operator "."
+- Instance Variable
+- Class Variable
+- Heap Memory
+- Primitive
+- Non-primitive
+- Constructor
+- 'this' keyword
