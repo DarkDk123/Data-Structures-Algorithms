@@ -1,3 +1,7 @@
+/**
+ * I have made it pretty meshed up!! So, sorry for that.
+ */
+
 import java.util.Arrays;
 
 public class CreateClass {
@@ -39,10 +43,27 @@ public class CreateClass {
         
         // New class "Building" with Constructor
 
-        Building build1 = new Building("Elon Must");
+        Building build1 = new Building("Elon Musk");
 
         // Getting owner of build1
         System.out.println(build1.owner);
+
+        // Functions inside class.
+        build1.getOwnerWithCrush();
+
+
+        // Multiple Constructors.
+        Building home = new Building("Virat", "Anushka");
+
+        home.getOwnerWithCrush();
+
+        // Multiple reference variables.
+        Building StolenHome = home;
+
+        StolenHome.owner = "Chacha Vidhayak hai apne!"; // Changed owner via one reference variable
+
+        // Changed object state (know from 2nd ref. variable)
+        home.getOwnerWithCrush();
     }
 }
 
@@ -60,10 +81,20 @@ class Student{
 class Building {
     // Declare attributes (this are actually instance variables)
     String owner;
-
+    String crush = "Imaginary";
     // Constructor (same name as class)
     Building(String o){
         this.owner = o; // Instance variable using "this" keyword | also can use 'owner' directly | "this" is just used to avoid name conflicts.
     }
     
+    // Adding Function to the Class
+    void getOwnerWithCrush(){
+        System.out.println("Owner is " + this.owner + " with crush " + this.crush);
+    }
+
+    // Multiple constructors | Method Overloading.
+    Building(String o, String c){
+        this.owner = o;
+        this.crush = c;
+    }
 }

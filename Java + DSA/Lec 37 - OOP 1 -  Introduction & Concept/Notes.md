@@ -21,4 +21,11 @@ The official text notes are [here](https://github.com/kunal-kushwaha/DSA-Bootcam
 - Primitive
 - Non-primitive
 - Constructor
-- 'this' keyword
+- 'this' keyword as instance itself. (everything about this.)
+- 'this' keyword as constructor.
+- Method Overloading
+- Multiple Reference variables to the same object.
+- Wrapper Classes for primitives
+- 'final' keyword
+- Garbage Collection.
+- "finalize" method (method called on destruction) - deprecated

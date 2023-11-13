@@ -5,6 +5,9 @@ public class IntroToOOP{
 
         // Now, Create something to store 5 roll no.
         int[] roll = new int[5];
+        System.out.println(names);
+        System.out.println(roll);
+
 
         // Create a Data Type to store data of 5 students {name, rollNo, marks}
         
