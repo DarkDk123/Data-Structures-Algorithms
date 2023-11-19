@@ -15,7 +15,8 @@ public class SingletonClass {
     // Must be static to allow calling before the object is created.
     public static SingletonClass getInstance(boolean AreYouOk){
         if (object==null){
-            return new SingletonClass(AreYouOk); // Create first object.
+            object = new SingletonClass(AreYouOk); // Create first object.
+            return object; // return it.
         }
 
         return object; // Return existing object!!
