@@ -67,3 +67,17 @@ There are many examples of polymorphism already explained i.e. in ***Inheritance
    2. `"final" keyword before a class restricts it to be inherited, also makes it's contents as final.`
 
    3. `static attributes & methods are class specific, hence cannot be overriden.`
+
+## **3. Abstraction :**
+   Abstraction is the Hiding of unnecessary Data & Information from the outer world & only showing the required information. 
+
+   It is a Design level issue, that how & what data should be hidden and what should be shown.
+
+   Abstraction is the concept of simplifying complex systems by modeling classes based on the essential properties and behaviors they possess. It involves hiding the implementation details and showing only the necessary features of an object. Abstraction allows us to focus on what an object does rather than how it achieves its functionality.
+
+## **4. Encapsulation:**
+   Encapsulation is the binding of data (properties, attributes) with certain behaviours (methods) together.
+
+   This Combining of variables and methods is called Encapsulation. It does not relate with what is hidden and what's not, instead it reduces the complexity by combining variables and methods together.
+
+   Encapsulation enhances code organization, reduces complexity, and improves maintainability by keeping related functionalities together.
