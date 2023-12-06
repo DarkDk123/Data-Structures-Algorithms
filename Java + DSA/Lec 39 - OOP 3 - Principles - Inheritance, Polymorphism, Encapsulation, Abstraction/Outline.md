@@ -6,7 +6,8 @@
 4. Abstraction
 ___
 
-1. **Inheritance :** Inheritance is acquiring properties & behaviours of existing classes by inheriting them in child classes.
+## 1. **Inheritance :**
+Inheritance is acquiring properties & behaviours of existing classes by inheriting them in child classes.
 
 * In Java, "extend" keyword is used for inheritance.
 * We can't inherit private properties and methods.
@@ -26,3 +27,14 @@ The Operations allowed here is defined by the ref. type only.
 
 3. To address this, you can use casting like `Child obj = (Child) new 
    Parent()`, if you are sure the object is indeed an instance of the Child class. However, this may lead to runtime errors if the object is not of the correct type.
+
+### **1.1 Types of Inheritance :** 
+   **A. Single Inheritance :**  A Child Class inheriting a Parent Class.
+
+   **B. Multi-level Inheritance :** A child class inherits from another class, and that parent class, in turn, inherits from another class. It creates a chain of inheritance where each class is a child of the previous one in a hierarchical structure.
+
+   **C. Multiple Inheritance :** When a child class inherits more than 1 parent classes. Not directly supported in java. (Will be covered in Interfaces).
+
+   **D. Tree/Hierarchical Inheritance :** Multiple child classes inherits single parent class, hence forming a tree like structure.
+
+   **E. Hybrid Inheritance :**  Combination of all above 4 Inheritances, not supported in java directly.
