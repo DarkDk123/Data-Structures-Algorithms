@@ -16,3 +16,15 @@ How these things can be accessed from outside and within the classes is determin
 * we can Access the `private` data & methods by the use of *getters & setters.*
 
 * `Protected` members are only accessible via Inheritance (Even if in the same package).
+
+### **Packages :**  
+A Java package is a directory that contains a collection of classes, interfaces, and subpackages. It provides a mechanism to group related classes and manage their accessibility. The package statement at the beginning of a Java source file indicates the package to which the class or interface belongs.
+
+
+**Types :**
+1. User Defined Packages. 2. Built-in Packages.
+
+
+### **Object Class :** 
+
+It's the top class in the *Class hierarchy*, and every java class is automatically inherited from the **Object Class**.
