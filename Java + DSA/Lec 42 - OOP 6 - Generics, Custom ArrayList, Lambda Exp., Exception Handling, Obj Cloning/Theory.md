@@ -57,3 +57,15 @@ Read more [here](https://docs.oracle.com/javase/tutorial/extra/generics/wildcard
 
 
 **[`Comparable` Example](./CompareObj.java)**.
+
+## Lambda Expressions.
+
+Lambda expressions provide a concise way to express instances of single-method interfaces (functional interfaces).
+
+When we use `ArrayList.foreach(lambda expression)`, it actually takes a `Consumable` interface object, that we define it's method via lambda expressions.
+
+**We thought, interfaces can't be Instantiated??**
+
+In Java, you can use lambda expressions to create objects of functional interfaces. **Functional interfaces are interfaces that have only one abstract method**, and they can be instantiated using lambda expressions. Lambda expressions provide a concise way to express instances of single-method interfaces **without the need to create an anonymous class.**
+
+**[Example of Lambda Expressions](./Lambda.java.)**.
