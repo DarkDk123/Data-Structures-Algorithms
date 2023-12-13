@@ -26,3 +26,23 @@ Docs [1](https://docs.oracle.com/javase/tutorial/extra/generics/intro.html), [2]
 [Restrictions](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjsx-m80YmDAxW6fGwGHfAYAzMQFnoECA4QAQ&url=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2Ftutorial%2Fjava%2Fgenerics%2Frestrictions.html&usg=AOvVaw3L3i-PE7RnXld1CIQlfI2I&opi=89978449) Over Generic Usage!
 
 Example code of Generics are [here](./CustomGenList.java).
+
+## Wildcards in Generics :
+
+It's a way to give more flexibility while programming.
+
+It is used where a type parameter is given like `List<Type>`
+
+It allows more flexible type parameter than a specific class or interface.<br>It is useful when we want to operate on different types without committing to a specific type. 
+
+It is denoted using **"?"**.
+
+There are three **types** of Wildcards :
+
+1. Unbounded wildcard. `List<?> myList;`
+2. Upper bounded wildcard. `List<? extends Number> numberList;`
+3. Lower bounded wildcard. `List<? super Integer> integerList;`
+
+These are described more in the example file : [WildCards.java](./WildCards.java).
+
+Read more [here](https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html).
