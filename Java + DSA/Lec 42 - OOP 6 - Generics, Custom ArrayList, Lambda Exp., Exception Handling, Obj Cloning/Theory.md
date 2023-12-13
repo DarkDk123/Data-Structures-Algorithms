@@ -9,3 +9,20 @@ Cause it can work only with "int" data types<br>
 Even if we adapt it to multiple data types, we we'll have to change almost 90% of our code!!
 
 This problem will be solved using Generics.
+
+
+## Generics :
+
+
+Generics allow you to abstract over types.
+
+In java, Generics provide a way to create classes, interfaces & methods with place-holders for data types.<br>
+The main purpose of this is to enable you to write code that can work with different type of data while maintaining type safety.
+
+When using generics in Java, you can use any valid identifier as a placeholder for the generic type, and it's common to see single uppercase letters like T, K, V, E, or any other meaningful identifier that follows Java's naming conventions.
+
+Docs [1](https://docs.oracle.com/javase/tutorial/extra/generics/intro.html), [2](https://docs.oracle.com/javase/tutorial/java/generics/types.html).
+
+[Restrictions](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjsx-m80YmDAxW6fGwGHfAYAzMQFnoECA4QAQ&url=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2Ftutorial%2Fjava%2Fgenerics%2Frestrictions.html&usg=AOvVaw3L3i-PE7RnXld1CIQlfI2I&opi=89978449) Over Generic Usage!
+
+Example code of Generics are [here](./CustomGenList.java).
