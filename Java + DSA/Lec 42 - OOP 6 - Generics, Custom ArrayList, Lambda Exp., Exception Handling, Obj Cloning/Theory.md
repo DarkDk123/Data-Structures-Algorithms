@@ -90,3 +90,30 @@ Exceptions are abnormal conditions or errors that occur during the execution of 
 3. We can also create our custom Exceptions by extending  `Exception` class.
 
 **[Brief Example.](./ExceptionsExample.java)**
+
+
+## [Object Cloning :](./Cloning.java)
+
+Object Cloning is making another object with the **"same state"** as the other.
+
+* we must implement `Cloneable` interface to allow a class's object to be cloned.
+* And then override the `Object.clone` method.
+* This `clone` method can throw an Exception : `CloneNotSupportedException`.
+
+### Shallow Copy :
+
+If we copy an object that **contains one or more objects** in it.
+Shallow copy **won't create new Object for inner objects**.
+Instead, it will share those inner objects with cloned objects also.
+
+Hence, if we modify **inner Objects** from Original Object.
+it will also be modified to **Cloned Objects**
+
+`It will copy only primitives not Inner Objects.`
+
+### Deep copy :
+
+Deep copy Creates **new objects** for **Inner objects** also while cloning an object.
+This way we can have Entirely isolated Cloned objects of existing objects.
+
+`It will Copy existing data including Primitives & Objects to the newly cloned object.`
