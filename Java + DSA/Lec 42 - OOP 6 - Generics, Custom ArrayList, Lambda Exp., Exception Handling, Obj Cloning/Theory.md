@@ -69,3 +69,24 @@ When we use `ArrayList.foreach(lambda expression)`, it actually takes a `Consuma
 In Java, you can use lambda expressions to create objects of functional interfaces. **Functional interfaces are interfaces that have only one abstract method**, and they can be instantiated using lambda expressions. Lambda expressions provide a concise way to express instances of single-method interfaces **without the need to create an anonymous class.**
 
 **[Example of Lambda Expressions](./Lambda.java.)**.
+
+
+## Exceptions & Errors :
+
+<img src="./Images/Exception.png"></img>
+
+### Errors :
+Errors are more severe problems that typically indicate a fundamental problem with the Java Virtual Machine (JVM) or the system hosting the JVM. Unlike exceptions, errors are generally not meant to be caught or handled by regular application code.
+
+i.e. **StackOverflowError**, **OutOfMemoryError** etc.
+
+### Exceptions : 
+Exceptions are abnormal conditions or errors that occur during the execution of a Java program. They are divided into two main categories: checked exceptions and unchecked exceptions.
+
+1. **Checked Exceptions :** These are exceptions that the compiler forces you to handle or declare in the throws clause of a method.
+
+2. **Unchecked Exceptions :** These are exceptions that the compiler does not enforce you to handle explicitly. | They occur at **Runtime**.
+
+3. We can also create our custom Exceptions by extending  `Exception` class.
+
+**[Brief Example.](./ExceptionsExample.java)**
