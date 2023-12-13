@@ -46,3 +46,14 @@ There are three **types** of Wildcards :
 These are described more in the example file : [WildCards.java](./WildCards.java).
 
 Read more [here](https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html).
+
+## Comparing Objects.
+
+1. We must implement `Comparable<type>` interface to add "comparing" Functionality
+2. We must override `compareTo()` method to compare different objects of same types.
+3. This method is used implicitly to sort Arrays of Objects.
+
+4. `Arrays.sort` method also takes an array with a `Comparable` obj. To define, how they'll be compared.
+
+
+**[`Comparable` Example](./CompareObj.java)**.
