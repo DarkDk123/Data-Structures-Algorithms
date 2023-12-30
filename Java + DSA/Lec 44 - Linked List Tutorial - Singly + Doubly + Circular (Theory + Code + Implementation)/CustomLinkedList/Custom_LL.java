@@ -186,7 +186,7 @@ public class Custom_LL {
     private Node get(int index){
         // Not possible.
         if (size <= index || index < 0) {
-            System.out.println("Cannot get %d-th element with %d sized List.");
+            System.out.println("Cannot get %d-th element with %d sized List.".formatted(index, size));
             return null;
         }
         
