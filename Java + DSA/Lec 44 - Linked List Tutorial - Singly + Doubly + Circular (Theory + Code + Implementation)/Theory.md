@@ -20,3 +20,11 @@ It consists of **Node Value & Next Node** only.
 Inbuilt Linked List - provided by java. [Example](./InBuilt_LL.java)
 
 Custom Linked List - [Example](./CustomLinkedList/Custom_LL.java)
+
+### **Doubly linked list**
+
+A doubly linked list is similar to a singly linked list, just in doubly LL, we also have ref. variables in each Node pointing to previous Node.
+
+It consists of **Node Value, Next Node & Previous Node.**
+
+
