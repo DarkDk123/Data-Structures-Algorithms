@@ -34,5 +34,18 @@ public class Main {
 
         // Get value at index 7;
         System.out.println("Get element from index 7 : " + ll.getElement(7));
+
+        // Get a Node, print it's value & it's left - right values.
+        // Benefit of Doubly Linked List.
+        Doubly_LL<Integer>.Node node = ll.get(6);
+        System.out.println("I prev: %d <-Index 5 : %d -> next : %d".formatted(node.previousNode.val, node.val, node.nextNode.val));
+
+        // Printing a Doubly Linked List in reverse.
+        // Also example of Generic Types
+        Doubly_LL<String> foo = new Doubly_LL<String>();
+        foo.insertEnd("Dipesh");
+        foo.insertEnd("JI");
+        foo.insertEnd("Rathore");
+        foo.displayRev();
     }
 }

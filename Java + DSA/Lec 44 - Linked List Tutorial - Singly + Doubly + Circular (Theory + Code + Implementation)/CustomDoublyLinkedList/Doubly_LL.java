@@ -10,7 +10,7 @@ package CustomDoublyLinkedList;
 public class Doubly_LL<T> {
     // Private Node class to create nodes.
 
-    private class Node {
+    protected class Node {
         T val; // value of the node
         Node nextNode; // Next node
         Node previousNode; // Previous node
@@ -107,6 +107,7 @@ public class Doubly_LL<T> {
     }
 
     // delete from start
+    @SuppressWarnings("unchecked")
     T deleteStart() {
         if (head == null) {
             System.out.println("Can't delete from Empty List.");
@@ -126,6 +127,7 @@ public class Doubly_LL<T> {
     }
 
     // delete from end
+    @SuppressWarnings("unchecked")
     T deleteEnd() {
         if (head == null) { // if head = null, then tail = null.
             System.out.println("Can't delete from Empty List.");
@@ -147,6 +149,7 @@ public class Doubly_LL<T> {
     }
 
     // delete from index
+    @SuppressWarnings("unchecked")
     T deleteFromIndex(int index) {
         // Not possible to delete.
         if (size <= index || index < 0) {
@@ -175,7 +178,7 @@ public class Doubly_LL<T> {
     }
 
     // Get Node at given index.
-    private Node get(int index) {
+    protected Node get(int index) {
         // Not possible.
         if (size <= index || index < 0) {
             System.out.println("Cannot get %d-th element with %d sized List.".formatted(index, size));
@@ -190,6 +193,27 @@ public class Doubly_LL<T> {
         return temp;
     }
 
+    void displayRev(){
+        if (head==null){
+            System.out.println("NULL");
+            return;
+        }
+        
+        Node temp = tail;
+
+        StringBuilder sb = new StringBuilder("Reversed LL : [");
+        while(temp != null){
+            if (temp.previousNode == null){
+                System.out.println(sb.append(temp.val) + "]");
+                return;
+            }
+
+            sb.append(temp.val + ", ");
+            temp = temp.previousNode;
+        }
+        
+        // No return.
+    }
     // toString method
     @Override
     public String toString() {
