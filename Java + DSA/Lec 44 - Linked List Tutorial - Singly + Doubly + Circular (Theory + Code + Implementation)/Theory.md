@@ -28,3 +28,15 @@ A doubly linked list is similar to a singly linked list, just in doubly LL, we a
 It consists of **Node Value, Next Node & Previous Node.**
 
 Custom doubly Linked List - [Example](./CustomDoublyLinkedList/Doubly_LL.java)
+
+### **Circular linked list**
+
+A circular linked list is in a circular structure. It's Tail again points to the head **(instead of null)**.
+
+This way `head` & `tail` only points to `null` if the list is **empty**.
+
+We can have 2 different type of **Circular LL :**
+1. Circular singly LL.
+2. Circular Doubly LL.
+
+I'll demonstrate **Circular Singly LL** - [Example](./CustomCircular_LL/Circular_LL.java).
