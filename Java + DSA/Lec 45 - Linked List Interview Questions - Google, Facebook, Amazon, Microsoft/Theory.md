@@ -15,3 +15,15 @@ Instructor's solution is so clean, you should visit that [Here](https://github.c
 ### Q.3 Remove duplicates from a Sorted Linked List. ([LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)).
 
 My solution [here](./Q3_RemoveDuplicates.java)
+
+### Q.4 Detect cycle in a Singly Linked List. ([LeetCode](https://leetcode.com/problems/linked-list-cycle/))
+
+Solution 1 (Mine) : [Here](./Q4_LinkedList_Cycle.java#L25)
+
+Solution 2 (Slow, Fast Pointer) : [Here](./Q4_LinkedList_Cycle.java#L43)
+
+**Fast and Slow Pointers:**
+
+* **Fast Pointer:** Moves two nodes ahead at each step (fast = fast.next.next).
+* **Slow Pointer:** Moves one node ahead at each step (slow = slow.next).
+* **Key Idea:** If a cycle exists, the fast pointer will eventually catch up to the slow pointer, as they'll both be looping within the cycle.
