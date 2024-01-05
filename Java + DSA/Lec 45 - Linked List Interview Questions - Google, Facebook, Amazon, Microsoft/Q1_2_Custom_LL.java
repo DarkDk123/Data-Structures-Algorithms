@@ -7,7 +7,7 @@
 
 // Singly Linked List
 // Default to Type Integer/int.
-public class Q1_Custom_LL {
+public class Q1_2_Custom_LL {
     // Private Node class to create nodes.
 
     private class Node {
@@ -28,7 +28,7 @@ public class Q1_Custom_LL {
 
     // Empty Constructor.
     // Initially head points to null.
-    Q1_Custom_LL() {
+    Q1_2_Custom_LL() {
         size = 0; // size zero
     }
 

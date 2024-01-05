@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Q1_Custom_LL ll = new Q1_Custom_LL();
+        Q1_2_Custom_LL ll = new Q1_2_Custom_LL();
 
         // Insert at End
         for (int i = 1; i < 11; i++) {

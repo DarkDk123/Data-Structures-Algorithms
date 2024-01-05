@@ -1,10 +1,10 @@
 /**
- * Q2 A Leet-code question to remove duplicates from a sorted LinkedList.
+ * Q3 A Leet-code question to remove duplicates from a sorted LinkedList.
  * 
  * Here's the Link : "https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
  */
 
-public class Q2_RemoveDuplicates {
+public class Q3_RemoveDuplicates {
 
     // Definition for singly-linked list.
     public class ListNode {
