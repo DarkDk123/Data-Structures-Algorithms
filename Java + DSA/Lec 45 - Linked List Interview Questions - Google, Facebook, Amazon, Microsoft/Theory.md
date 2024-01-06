@@ -37,3 +37,9 @@ Solution is [here](./Q5_LL_CycleLen.java).
 ### Q.6 Find the start of the cycle in linked list. ([LeetCode](https://leetcode.com/problems/linked-list-cycle-ii/))
 
 Solution Code : [Here](./Q6_FindCycleStart.java)
+
+### Q.7 Find whether the number is Happy or not. ([LeetCode](https://leetcode.com/problems/happy-number/))
+
+First Solution : **Simulation**. [Here](./Q7_HappyNumber.java#L10)
+
+Second Solution : **Fast, Slow Pointer**. [Here](./Q7_HappyNumber.java#L35)
