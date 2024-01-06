@@ -27,3 +27,9 @@ Solution 2 (Slow, Fast Pointer) : [Here](./Q4_LinkedList_Cycle.java#L43)
 * **Fast Pointer:** Moves two nodes ahead at each step (fast = fast.next.next).
 * **Slow Pointer:** Moves one node ahead at each step (slow = slow.next).
 * **Key Idea:** If a cycle exists, the fast pointer will eventually catch up to the slow pointer, as they'll both be looping within the cycle.
+
+### Q.5 Find the length of the Cycle in Linked List.
+
+It's just same as before one, we have to find the cycle first **(with Fast & slow pointers)**, then again loop until we end up at the same Node. (This will find the length of the cycle).
+
+Solution is [here](./Q5_LL_CycleLen.java). 
