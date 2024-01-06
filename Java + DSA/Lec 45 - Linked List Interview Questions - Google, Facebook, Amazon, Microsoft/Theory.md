@@ -32,4 +32,8 @@ Solution 2 (Slow, Fast Pointer) : [Here](./Q4_LinkedList_Cycle.java#L43)
 
 It's just same as before one, we have to find the cycle first **(with Fast & slow pointers)**, then again loop until we end up at the same Node. (This will find the length of the cycle).
 
-Solution is [here](./Q5_LL_CycleLen.java). 
+Solution is [here](./Q5_LL_CycleLen.java).
+
+### Q.6 Find the start of the cycle in linked list. ([LeetCode](https://leetcode.com/problems/linked-list-cycle-ii/))
+
+Solution Code : [Here](./Q6_FindCycleStart.java)
