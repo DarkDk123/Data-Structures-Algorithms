@@ -43,3 +43,9 @@ Solution Code : [Here](./Q6_FindCycleStart.java)
 First Solution : **Simulation**. [Here](./Q7_HappyNumber.java#L10)
 
 Second Solution : **Fast, Slow Pointer**. [Here](./Q7_HappyNumber.java#L35)
+
+### Q.8 Find the middle of the Linked List. ([LeetCode](https://leetcode.com/problems/middle-of-the-linked-list/))
+
+**Approach 1 :** Find the length with 1 pass then traverse till middle. ***Code [Here](./Q8_MiddleOfLL.java#L7)***
+
+**Approach 2 :** Find using Slow & Fast Pointer . ***Code [Here](./Q8_MiddleOfLL.java#L26)*** 
