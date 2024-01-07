@@ -49,3 +49,9 @@ Second Solution : **Fast, Slow Pointer**. [Here](./Q7_HappyNumber.java#L35)
 **Approach 1 :** Find the length with 1 pass then traverse till middle. ***Code [Here](./Q8_MiddleOfLL.java#L7)***
 
 **Approach 2 :** Find using Slow & Fast Pointer . ***Code [Here](./Q8_MiddleOfLL.java#L26)*** 
+
+### Q.9 Sort a given linked List. 
+
+**Approach 1 :** Sorting using bubble sort | Not Accepted *(TLE Error)* ***Code [Here](./Q9_SortLL.java#L7)***.
+
+**Approach 2 :** Sorting using merge sort. ***Code [Here](./Q9_SortLL.java#L37)***
