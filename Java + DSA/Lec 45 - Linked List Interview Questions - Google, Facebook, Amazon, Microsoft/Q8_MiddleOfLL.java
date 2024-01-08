@@ -2,12 +2,12 @@
  * Q.8 Find "Middle Node" of the given Singly Linked List.
  */
 public class Q8_MiddleOfLL {
-    
+
     // Solution 1: Find length, traverse till middle.
     public ListNode middleNode(ListNode head) {
         int count = 0;
         ListNode temp = head;
-        
+
         // Get length.
         while (temp != null) {
             count++;
@@ -29,7 +29,7 @@ public class Q8_MiddleOfLL {
 
         ListNode slow, fast;
         slow = fast = head;
-        
+
         // If fast==null, then middle==slow;
         while (fast != null && fast.next != null) {
             slow = slow.next;
@@ -39,16 +39,4 @@ public class Q8_MiddleOfLL {
         return slow;
     }
 
-    
-    // Definition for singly-linked list.
-    class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }

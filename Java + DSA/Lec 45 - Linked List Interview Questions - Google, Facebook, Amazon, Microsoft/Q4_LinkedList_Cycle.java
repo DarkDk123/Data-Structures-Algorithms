@@ -10,17 +10,6 @@ import java.util.ArrayList;
 
 public class Q4_LinkedList_Cycle {
 
-    // Definition for singly-linked list.
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     // Solution 1 : With extra space O(n);
     public boolean hasCycle(ListNode head) {
         ArrayList<ListNode> visited = new ArrayList<>();

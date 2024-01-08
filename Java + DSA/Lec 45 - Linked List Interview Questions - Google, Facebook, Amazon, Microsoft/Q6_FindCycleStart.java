@@ -27,17 +27,4 @@ public class Q6_FindCycleStart {
 
         return null;
     }
-
-    // Definition for singly-linked list.
-
-    class ListNode {
-        
-        int val;
-        ListNode next;
-
-       ListNode(int x) {
-          val = x;
-          next = null;
-      }
-    }
 }

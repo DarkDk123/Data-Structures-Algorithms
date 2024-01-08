@@ -5,16 +5,7 @@
  */
 
 public class Q3_RemoveDuplicates {
-
-    // Definition for singly-linked list.
-    public class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-     
+    
     // Deleting duplicate Nodes from a Sorted Linked List.
     public ListNode deleteDuplicates(ListNode head) {
         ListNode temp = head;

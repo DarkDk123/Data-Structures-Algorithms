@@ -2,17 +2,7 @@
  * Q5 Find the length of the cycle in the list.
  */
 public class Q5_LL_CycleLen {
-    // Definition for singly-linked list.
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
+    
     // Solution.
     // With Fast & Slow pointers.
     public int cycleLen(ListNode head) {

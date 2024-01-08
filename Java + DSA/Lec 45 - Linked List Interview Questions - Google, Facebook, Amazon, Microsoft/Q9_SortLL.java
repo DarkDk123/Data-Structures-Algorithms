@@ -3,7 +3,7 @@
  * LeetCode : "https://leetcode.com/problems/sort-list/"
  */
 public class Q9_SortLL {
-    
+
     // Solution 1: Sorting using bubble sort.
     public ListNode sortList(ListNode head) {
         ListNode temp = head;
@@ -33,19 +33,19 @@ public class Q9_SortLL {
 
         return;
     }
-    
+
     // Solution 2 : Sort using MergeSort Technique.
-    public ListNode sortLL(ListNode head){
-        
+    public ListNode sortLL(ListNode head) {
+
         // If length is 0 or 1. It's already sorted.
-        if (head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
 
         // Else sort it using same method in recursion.
-        else{
+        else {
             ListNode mid = getMidWithCut(head);
-            
+
             // Sort recursively.
             ListNode left = sortLL(head); // first half
             ListNode right = sortLL(mid);
@@ -58,15 +58,16 @@ public class Q9_SortLL {
     // Also makes a cut before mid.
     // Making it two different Lists.
     // It Divides the List at the middle Node.
-    public ListNode getMidWithCut(ListNode head){
-        if (head == null || head.next == null) return head;
+    public ListNode getMidWithCut(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
 
         // With fast and slow pointers.
-        ListNode fast, slow, slowPrev=null; // "slowPrev" is Null at start.
-        slow = fast = head; 
+        ListNode fast, slow, slowPrev = null; // "slowPrev" is Null at start.
+        slow = fast = head;
 
         // Find Length first.
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slowPrev = slow; // Save Previous Slow.
             slow = slow.next;
             fast = fast.next.next;
@@ -76,20 +77,19 @@ public class Q9_SortLL {
         return slow; // Middle node.
     }
 
-
     // Merge two sorted Lists.
     public ListNode merge(ListNode l1, ListNode l2) {
-        if (l1 == null && l2 == null) return null;
-        
+        if (l1 == null && l2 == null)
+            return null;
+
         ListNode temp, answer;
         temp = answer = new ListNode(0);
 
-        while(l1 != null && l2 != null){
-            if (l1.val < l2.val){
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
                 temp.next = l1;
                 l1 = l1.next;
-            }
-            else{
+            } else {
                 temp.next = l2;
                 l2 = l2.next;
             }
@@ -97,25 +97,13 @@ public class Q9_SortLL {
             temp = temp.next;
         }
 
-        if (l1 != null){
+        if (l1 != null) {
             temp.next = l1;
-        }
-        else{
+        } else {
             temp.next = l2;
         }
 
         return answer.next;
     }
 
-    // Definition for singly-linked list.
-    class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }
