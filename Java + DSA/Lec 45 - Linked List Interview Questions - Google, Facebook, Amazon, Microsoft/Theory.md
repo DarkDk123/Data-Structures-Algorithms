@@ -91,3 +91,10 @@ We've to reverse the nodes of a given Linked List as k-node groups.
 
 **Approach :**  We now know how to reverse within a [**specific range**](./Q11_ReverseBetween.java#L9),
 we can easily reverse the LL into k-groups using these ranges. ***Code [here](./Q14_ReverseKGroup.java#L10)***
+
+### Q. Like above, we have to reverse k-nodes but alternatively.
+We'll just have to jumpy on to k elements more at every reversal.
+
+### Q.15 Rotate List k-times ([LeetCode](https://leetcode.com/problems/rotate-list/))
+
+Just implementing what's needed. ***Code [Here](./Q15_RotateList.java#L10)***.
