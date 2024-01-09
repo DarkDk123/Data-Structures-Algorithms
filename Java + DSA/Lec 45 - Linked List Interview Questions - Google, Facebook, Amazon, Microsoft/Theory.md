@@ -66,3 +66,16 @@ Second Solution : **Fast, Slow Pointer**. [Here](./Q7_HappyNumber.java#L35)
 
 Just Implementing what's needed, applying previous reversing
 approach at the particular part of the Linked list only. ***Code [here](./Q11_ReverseBetween.java#L9)***
+
+
+### Q.12 Find whether a Linked List is palindrome or not.
+
+**Approach:** As we want to take extra space.
+
+We'll First get the middle of the Linked list. And will cut the List into two halves.
+
+Then we'll reverse the second half of the list.
+
+Now both halves should have equal values.
+
+**Code [here](./Q12_PalindromeLL.java#L7).**
