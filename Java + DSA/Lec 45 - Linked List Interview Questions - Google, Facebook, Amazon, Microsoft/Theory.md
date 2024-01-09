@@ -79,3 +79,9 @@ Then we'll reverse the second half of the list.
 Now both halves should have equal values.
 
 **Code [here](./Q12_PalindromeLL.java#L7).**
+
+### Q.13 Reorder a given Linked List.
+
+**Approach :** Again by using previous techniques for **getting middle** and  **reversing list** are used to solve this problem.
+
+We'll reverse the other half of the list. And then reorder the list as suggested. ***Code [Here](./Q13_ReorderLL.java#L10).***
