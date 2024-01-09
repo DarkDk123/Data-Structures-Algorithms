@@ -85,3 +85,9 @@ Now both halves should have equal values.
 **Approach :** Again by using previous techniques for **getting middle** and  **reversing list** are used to solve this problem.
 
 We'll reverse the other half of the list. And then reorder the list as suggested. ***Code [Here](./Q13_ReorderLL.java#L10).***
+
+### Q.14 Reverse Nodes in k-groups.
+We've to reverse the nodes of a given Linked List as k-node groups.
+
+**Approach :**  We now know how to reverse within a [**specific range**](./Q11_ReverseBetween.java#L9),
+we can easily reverse the LL into k-groups using these ranges. ***Code [here](./Q14_ReverseKGroup.java#L10)***
