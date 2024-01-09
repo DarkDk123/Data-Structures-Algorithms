@@ -54,10 +54,15 @@ Second Solution : **Fast, Slow Pointer**. [Here](./Q7_HappyNumber.java#L35)
 
 **Approach 1 :** Sorting using bubble sort | Not Accepted *(TLE Error)* ***Code [Here](./Q9_SortLL.java#L7)***.
 
-**Approach 2 :** Sorting using merge sort. ***Code [Here](./Q9_SortLL.java#L37)***
+**Approach 2 :** Sorting using merge sort. *****Code** [Here](./Q9_SortLL.java#L37)***
 
 ### Q.10 Reverse a LinkedList.
 
 **Approach 1 :** Using Recursion just reverting the next pointers of Nodes. ***Code [Here](./Q10_ReverseLL.java#L8)***.
 
 **Approach 2 :** Reverse using iteration ***Code [Here](./Q10_ReverseLL.java#L31)***
+
+### Q.11 Reverse a LinkedList within a specific part only.
+
+Just Implementing what's needed, applying previous reversing
+approach at the particular part of the Linked list only. ***Code [here](./Q11_ReverseBetween.java#L9)***
