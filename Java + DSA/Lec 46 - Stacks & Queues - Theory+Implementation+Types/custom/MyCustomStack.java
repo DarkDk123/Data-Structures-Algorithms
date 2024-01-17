@@ -54,12 +54,13 @@ public class MyCustomStack{
 class CustomStack {
     
     // It will internally use an array.
-    private int[] stackArray;
-    private int top;
+    protected int[] stackArray;
+    protected int top;
     private final int DEFAULT_SIZE = 10; // Default size | Static to make common among objects.
 
     // Constructor with size parameter.
     public CustomStack(int size) {
+        if (size <= 0) size = DEFAULT_SIZE;
         stackArray = new int[size];
         top = -1;
     }
