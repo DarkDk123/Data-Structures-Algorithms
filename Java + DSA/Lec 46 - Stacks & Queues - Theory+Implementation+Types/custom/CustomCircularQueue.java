@@ -95,11 +95,6 @@ public class CustomCircularQueue{
         return "[Empty Queue]";
     }
 
-    void print(){
-        System.out.println("Front : %d, End : %d".formatted(front, end));
-    }
-
-
     // Runner method.
     public static void main(String[] args) {
             CustomCircularQueue myQueue = new CustomCircularQueue();
