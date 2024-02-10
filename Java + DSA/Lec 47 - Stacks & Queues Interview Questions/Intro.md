@@ -29,3 +29,7 @@ Here, I will list out the Interview Questions done for Stacks and Queues
 3. Largest Rectangle in Histogram ([LeetCode Hard](https://leetcode.com/problems/largest-rectangle-in-histogram/))
    
    Code is [Here](./LargestRectangle.java).
+
+4. Valid Parentheses ([LeetCode Easy](https://leetcode.com/problems/valid-parentheses/)).
+
+   The Solution is [Here](./ValidParentheses.java).
