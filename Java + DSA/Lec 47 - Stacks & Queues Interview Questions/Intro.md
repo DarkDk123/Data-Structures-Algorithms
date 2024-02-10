@@ -25,3 +25,7 @@ Here, I will list out the Interview Questions done for Stacks and Queues
    The code is [here](./GameOfTwoStacks.java) with locally generated test cases!
 
    I'm just skipping the submission part here, it's bit complex & i'm just not coding in HackerRank.
+
+3. Largest Rectangle in Histogram ([LeetCode Hard](https://leetcode.com/problems/largest-rectangle-in-histogram/))
+   
+   Code is [Here](./LargestRectangle.java).
