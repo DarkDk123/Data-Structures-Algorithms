@@ -33,3 +33,7 @@ Here, I will list out the Interview Questions done for Stacks and Queues
 4. Valid Parentheses ([LeetCode Easy](https://leetcode.com/problems/valid-parentheses/)).
 
    The Solution is [Here](./ValidParentheses.java).
+
+5. Make Parentheses Valid ([LeetCode](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/))
+   
+   The Solution is [Here](./MakeParenthesesValid.java).
