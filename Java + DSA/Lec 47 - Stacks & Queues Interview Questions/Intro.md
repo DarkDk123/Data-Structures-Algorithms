@@ -41,3 +41,13 @@ Here, I will list out the Interview Questions done for Stacks and Queues
 6. Make Parentheses balanced ([LeetCode](https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/))
 
    The Solution is [Here](./MakeParenthesesBalanced.java).
+
+In middle, i revised the lecture (coming after a long time)!
+**Refreshed this lecture**
+* **Solved following problems with different approaches**
+    * **Queue with Stacks (Amortized)**
+    * **Stack with Queues**
+    * **Stack with Single Queue** (space-optimized)
+    * **Python Queue** (implementation)
+
+From now on, i'll continue to complete next lectures, at a decent speed!
