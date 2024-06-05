@@ -25,10 +25,12 @@ Here, I will list out the Interview Questions done for Stacks and Queues
    The code is [here](./GameOfTwoStacks.java) with locally generated test cases!
 
    I'm just skipping the submission part here, it's bit complex & i'm just not coding in HackerRank.
+   
+   ***Edit: I Solved it on hacker-rank, it needed a different approach, see it [Here](https://www.youtube.com/watch?v=GaZiS3bj2dY)***
 
 3. Largest Rectangle in Histogram ([LeetCode Hard](https://leetcode.com/problems/largest-rectangle-in-histogram/))
    
-   Code is [Here](./LargestRectangle.java).
+   Code is [Here](./LargestRectangle.java). Also did in python [LeetCode](https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/1278281729/).
 
 4. Valid Parentheses ([LeetCode Easy](https://leetcode.com/problems/valid-parentheses/)).
 
@@ -51,3 +53,6 @@ In middle, i revised the lecture (coming after a long time)!
     * **Python Queue** (implementation)
 
 From now on, i'll continue to complete next lectures, at a decent speed!
+
+
+#### Just Completed the lecture! getting my confidence again!😎
