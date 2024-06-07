@@ -78,7 +78,8 @@ class AbstractBinaryTree {
         if (root == null) {
             System.out.println("No tree to show!!");
         } else {
-            display(root, "", true);
+            // display(root, "", true);
+            display2(root, 0);
         }
     }
 
@@ -93,5 +94,27 @@ class AbstractBinaryTree {
         }
     }
 
+
+    private void display2(Node root, int level){
+        if (root==null){
+            return;
+        }
+
+        display2(root.rightChild, level+1);
+
+        if (level != 0){
+            for (int i = 0; i < level - 1; i++) {
+                System.out.print("|\t");
+            }
+
+            System.out.println("|----> " + root.val); 
+        }
+        else{
+            System.out.println(root.val);
+        }
+        
+
+        display2(root.leftChild, level+1);
+    }
 }
 
