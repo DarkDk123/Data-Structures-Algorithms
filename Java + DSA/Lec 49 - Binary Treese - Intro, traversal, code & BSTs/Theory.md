@@ -113,4 +113,17 @@ We'll focus on -
     - A balanced tree has complexity of ***$\log(n)$*** for all insertion, deletion and retrieval operations.
     - An unbalanced tree will be inefficient (skewed tree) with complexity of **O(N)** for all operations!
 
+### ***Traversals -*** Traversing through the entire tree structure!
 
+There are mainly two types of traversals in trees - 
+  1. ***Breadth first traversal (BFS) -*** traverses as far as possible along each branch before backtracking. *(Queue)*
+  2. ***Depth first traversal (DFS) -*** traverses level by level starting from the root. *(Stack)*
+  
+
+  Specific to binary trees, there are three kinds of DFS - 
+
+  1. ***Pre-Order traversal -*** *Node-left-right* traversal.
+  2. ***In-Order traversal -*** *Left-Node-right* traversal.
+  3. ***Post-Order traversal -*** *Left-right-Node*
+   
+   

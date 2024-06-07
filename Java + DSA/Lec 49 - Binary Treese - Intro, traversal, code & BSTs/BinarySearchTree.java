@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * BinarySearchTree
  */
@@ -19,6 +17,16 @@ public class BinarySearchTree {
         BSTree.insertAllSorted(
                 new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }, 0, 19);
         BSTree.display();
+        
+        System.out.print("\nPreOrder Traversal : ");
+        BSTree.preOrder();
+
+        System.out.print("\nInOrder Traversal : ");
+        BSTree.inOrder();
+        
+        System.out.print("\nPostOrder Traversal : ");
+        BSTree.postOrder();
+        
     }
 }
 
@@ -165,5 +173,49 @@ class AbstractBST {
         insert(nums[mid]);
         insertAllSorted(nums, s, mid - 1);
         insertAllSorted(nums, mid + 1, end);
+    }
+
+    // All three DFS Traversals for a BST.
+    public void preOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        System.out.print("--> " + root.val);
+        preOrder(root.leftChild);
+        preOrder(root.rightChild);
+    }
+
+    public void inOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        inOrder(root.leftChild);
+        System.out.print("--> " + root.val);
+        inOrder(root.rightChild);
+    }
+
+    public void postOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        postOrder(root.leftChild);
+        postOrder(root.rightChild);
+        System.out.print("--> " + root.val);
+    }
+
+    // To be called methods
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    public void postOrder() {
+        postOrder(root);
     }
 }
