@@ -99,4 +99,5 @@ We'll focus on -
 
 # Code Files
 
+**[BinaryTree.java](./BinaryTree.java)** - Implemented Binary Tree Using classes, it just keeps taking input for left and right child! and then displays the tree at the end.
 
