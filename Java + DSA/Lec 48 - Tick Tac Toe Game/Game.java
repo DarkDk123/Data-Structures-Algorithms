@@ -2,23 +2,25 @@ import java.util.Arrays;
 import java.util.Scanner;;
 
 /**
- * <h2> Game
- * <h3>- Main runner class for running the O-X game using
+ * <h2>Game
+ * <h3>- Main runner class for running the Tic-Tac-Toe game using
  */
-public class Game{
+public class Game {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] names;
 
         // Take Names
         while (true) {
-            try{
+            try {
                 System.out.print("Please enter Users name: like - Player O, Player X -->  ");
                 names = sc.nextLine().split(",");
-                if (names.length != 2) throw new Exception();
+                if (names.length != 2)
+                    throw new Exception();
                 break; // If input accepted!
+            } catch (Exception e) {
+                System.out.println("Please Enter valid Names!");
             }
-            catch (Exception e) {System.out.println("Please Enter valid Names");}
         }
 
         Board gameBoard = new Board(names[0], names[1]);
@@ -27,7 +29,11 @@ public class Game{
             gameBoard.viewBoard();
             System.out.print("Enter move coordinates (1 <= x,y <= 3): x, y -->  ");
             String[] xy = sc.nextLine().split(",");
-            gameBoard.nextMove(Integer.parseInt(xy[0].trim()), Integer.parseInt(xy[1].trim()));
+            try {
+                gameBoard.nextMove(Integer.parseInt(xy[0].trim()), Integer.parseInt(xy[1].trim()));
+            } catch (Exception e) {
+                System.out.println("Please Enter valid coordinates!");
+            }
         }
 
         sc.close();
@@ -38,16 +44,19 @@ public class Game{
 /**
  * Board Class
  * 
- * - <h2> Board Class for Overall O-X game
+ * -
+ * <h2>Board Class for Overall Tic-Tac-Toe game
  */
 class Board {
     private String playerOName, playerXName;
     private String[][] gameBoard = new String[3][3]; // Game Board
     boolean gameOver = false;
     private boolean isPlayerOne = true;
+    private int totalMoves = 0; // To check if game draws!
 
     /**
      * Constructor of Board class
+     * 
      * @param playerOne - Name of the first player | 'O' Player
      * @param playerTwo - Name of the second player | 'X' Player
      * 
@@ -63,7 +72,8 @@ class Board {
         clearConsole();
         x -= 1;
         y -= 1;
-        if (0 > x || x > 2 || y < 0 || y > 2 || gameBoard[x][y] != null){
+
+        if (0 > x || x > 2 || y < 0 || y > 2 || gameBoard[x][y] != null) {
             System.out.println("\nInvalid move!!");
             return false; // Already Played
         } else {
@@ -76,6 +86,15 @@ class Board {
             }
 
             isPlayerOne = !isPlayerOne;
+            totalMoves += 1;
+
+            if (totalMoves >= 9) {// Game draws!
+                System.out.println(" --> Game Over | Draw | You both are Heroes/Heroins!");
+                viewBoard();
+                clearBoard();
+                gameOver = true;
+            }
+
             return true;
         }
     }
