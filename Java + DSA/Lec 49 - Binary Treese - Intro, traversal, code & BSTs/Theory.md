@@ -99,5 +99,18 @@ We'll focus on -
 
 # Code Files
 
-**[BinaryTree.java](./BinaryTree.java)** - Implemented Binary Tree Using classes, it just keeps taking input for left and right child! and then displays the tree at the end.
+- **[BinaryTree.java](./BinaryTree.java)** - Implemented Binary Tree Using classes, it just keeps taking input for left and right child! and then displays the tree at the end.
+
+- ***[BinarySearchTree.java](./BinarySearchTree.java)*** - A type of binary tree which have a sorted structure! like
+  
+  - Left child elements will always be smaller than the parent node.
+  - And right child nodes will always be greater than the parent node.
+
+    ### ***Balanced Trees :***
+    - A balance tree is a efficient tree where, the absolute difference between the height left child node and the height of right child node will always be equal to or smaller than 1.
+   
+    - Like $\boxed{|(h_{left}  - h_{right})| <= 1}$
+    - A balanced tree has complexity of ***$\log(n)$*** for all insertion, deletion and retrieval operations.
+    - An unbalanced tree will be inefficient (skewed tree) with complexity of **O(N)** for all operations!
+
 
