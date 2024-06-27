@@ -100,8 +100,11 @@ class AbstractAVL {
 
         node.getHeight = Math.max(getHeight(node.leftChild), getHeight(node.rightChild)) + 1; // Increased getHeight by
                                                                                               // 1
+        if (!balanced(node)) {
+            node = rotate(node);
+        }
 
-        return rotate(node);
+        return node;
     }
 
     /**
@@ -110,33 +113,31 @@ class AbstractAVL {
      */
     private Node rotate(Node node) {
         if (getHeight(node.leftChild) - getHeight(node.rightChild) > 1) {
-            // leftChild heavy
+            // left heavy
             if (getHeight(node.leftChild.leftChild) - getHeight(node.leftChild.rightChild) > 0) {
-                // leftChild-leftChild case
+                // left-left case
                 return rightRotate(node);
-            }
-            if (getHeight(node.leftChild.leftChild) - getHeight(node.leftChild.rightChild) < 0) {
-                // leftChild-rightChild case
-                // first make it leftChild-leftChild case then rightChild rotate
+            } else {
+                // left-right case
+                // first make it left-left case then right rotate
                 node.leftChild = leftRotate(node.leftChild);
                 return rightRotate(node);
             }
         }
 
-        if (getHeight(node.leftChild) - getHeight(node.rightChild) < -1) {
-            // rightChild heavy
+        else {
+            // right heavy
             if (getHeight(node.rightChild.leftChild) - getHeight(node.rightChild.rightChild) < 0) {
-                // rightChild-rightChild case
+                // right-right case
                 return leftRotate(node);
-            }
-            if (getHeight(node.rightChild.leftChild) - getHeight(node.rightChild.rightChild) > 0) {
-                // rightChild-leftChild case
-                // first make it rightChild-rightChild case then leftChild rotate
+            } else {
+                // right-left case
+                // first make it right-right case then left rotate
                 node.rightChild = rightRotate(node.rightChild);
                 return leftRotate(node);
             }
         }
-        return node;
+
     }
 
     private Node rightRotate(Node node) {
@@ -211,7 +212,7 @@ class AbstractAVL {
             for (int i = 0; i < level - 1; i++) {
                 System.out.print("|\t");
             }
-            System.out.println("|-----> " + root.val + "(" + balanced(root) + ")");
+            System.out.println("|---------> " + root.val + "(" + (balanced(root)?"t":"f") + ")");
         }
 
         else {
