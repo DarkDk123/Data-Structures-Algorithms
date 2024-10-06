@@ -254,3 +254,134 @@ class Solution {
 }
 
 ```
+
+## 6. [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/)
+
+Reading the description of the question, we can have few approaches to this question!
+
+### A. Solution that works on **any Tree**, no matter it's perfect binary tree or not!
+
+It is a slight modification of the previous **BFS code**.
+
+```java
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+class Solution {
+    public Node connect(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+
+        if (root != null){
+            queue.offer(root);
+        }
+
+        while (!queue.isEmpty()){
+            int size = queue.size();
+
+            // For each level
+            for (int i = 0; i<size; i++){
+                
+                // Assign next pointers
+                Node n = queue.poll();
+
+                // Assign next node by peek!
+                // If it's not the last in this level!
+                if (i != size-1){
+                    n.next = queue.peek();
+                }
+                // Else Assign to null 
+                else{
+                    n.next = null;
+                }
+                
+                if (n.left != null){
+                    queue.offer(n.left);
+                }
+                
+                if (n.right != null){
+                    queue.offer(n.right);
+                }
+            }
+        }
+
+        return root;
+
+    }
+}
+
+```
+
+### B. Efficient and concise Solution that works especially for perfect binary tree.
+
+This connects all children of current node, going level by level !
+
+```java
+// For Perfect BT, Iterative
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+class Solution {
+    public Node connect(Node rootNode) {
+        Queue<Node> queue = new LinkedList<>();
+
+        if (rootNode != null){
+            queue.offer(rootNode);
+        }
+
+
+        while (!queue.isEmpty()){
+            Node root = queue.poll();
+
+            if (root.right != null){
+                root.left.next = root.right; // A Perfect BT.
+
+                // Both exists
+                queue.offer(root.left);
+                queue.offer(root.right);
+            }
+            
+            if (root.right != null && root.next != null){
+                root.right.next = root.next.left;
+            }
+
+        }
+
+        return rootNode;
+
+    }
+}
+```
+
+### C. Above solution with recursion (Concise code).
+
+Because assigning ***next pointer*** doesn't require us to be level by level, we can use *Depth First Search* here with recursion stack.
+
+```java
+// For Perfect BT, Recursive, DFS
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+class Solution {
+    public Node connect(Node root) {
+        if (root == null){
+            return root;
+        }
+
+        if (root.right != null){
+            root.left.next = root.right;
+        }
+
+        if (root.right != null && root.next != null){
+            root.right.next = root.next.left;
+        }
+
+        connect(root.left);
+        connect(root.right);
+
+        return root;
+    }
+}
+```
