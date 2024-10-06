@@ -145,7 +145,7 @@ class Solution {
 ```
 
 
-### 4. [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
+## 4. [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
 
 
 We just need to change some logic. Using the reverse flag, we traverse specific levels in reverse order! Hence Zigzag Pattern at last.
@@ -206,6 +206,49 @@ class Solution {
             output.add(inner);
         }
         
+        return output;
+    }
+}
+
+```
+
+
+## 5. [Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/)
+
+Here, we just need to traverse the tree levels in reversed form, from leafs to the root.\
+So, we will modify existing code a little bit, adding inner lists [per level], at ***0*** index always!
+
+```java
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> output = new ArrayList<>();
+
+        if (root != null){
+            queue.add(root);
+        }
+
+        while (!queue.isEmpty()){
+            List<Integer> inner = new ArrayList<>();
+            
+            int size = queue.size();
+
+            while (size > 0){
+                TreeNode n = queue.remove();
+                inner.add(n.val);
+
+                if (n.left != null) {queue.add(n.left);}
+                if (n.right != null) {queue.add(n.right);}
+                size--;
+            }
+            
+            output.add(0, inner); // Inserting at the start!
+        }
+        
+
         return output;
     }
 }
