@@ -385,3 +385,51 @@ class Solution {
     }
 }
 ```
+
+## 7. [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/description/)
+
+This is again just BFS solution, the only difference is that we are adding only the last node's value in each level.
+
+There are also some DFS solutions (maybe more efficient) out there. We're doing the BFS one now.
+
+
+```java
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.ArrayList;
+
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        if (root != null){
+            queue.offer(root);
+        }
+
+        while (!queue.isEmpty()){
+            int size = queue.size();
+
+            for (int i = 0; i<size; i++){
+                TreeNode n = queue.poll();
+
+                // If last node of current level.
+                if (i == size-1){
+                    ans.add(n.val);
+                }
+
+                // Insert it's children!
+                if (n.left != null){
+                    queue.offer(n.left);
+                }
+
+                if (n.right != null){
+                    queue.offer(n.right);
+                }
+            }
+        }
+
+        return ans;
+    }
+}
+```
