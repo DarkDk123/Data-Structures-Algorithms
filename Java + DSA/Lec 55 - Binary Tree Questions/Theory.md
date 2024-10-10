@@ -433,3 +433,167 @@ class Solution {
     }
 }
 ```
+
+## 8. [Cousins in Binary Tree.](https://leetcode.com/problems/cousins-in-binary-tree/description/)
+
+Given `x` and `y`, two nodes in a tree having unique node values, we have to find they are cousins or not!
+
+Two nodes are cousins if they are at the **same level** and have **different parents**.
+
+### Solution 1: Iterative BFS
+
+```java
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Solution {
+    public boolean isCousins(TreeNode root, int x, int y) {
+        Queue<List<TreeNode>> queue = new LinkedList<>();
+        
+        if (root != null) queue.offer(new ArrayList<>(Arrays.asList(root)));
+
+        while (!queue.isEmpty()){
+            int levelSize = queue.size();
+            
+            // Get a score for each level, having node or not!
+            int levelScore = 0;
+            for (int i = 0; i<levelSize; i++){
+                List<TreeNode> siblings = queue.poll();
+                
+                // For each siblings
+                int siblingScore = 0;
+                for (int j = 0; j<siblings.size(); j++){
+                    TreeNode cur = siblings.get(j);
+
+                    if (cur.val == x || cur.val == y){
+                        siblingScore += 1;
+                    }
+                    
+                    // Add children!
+                    if (cur.left != null || cur.right != null){
+                        List<TreeNode> children = new ArrayList<>();
+                        
+                        if (cur.left != null) children.add(cur.left);
+                        if (cur.right != null) children.add(cur.right);
+
+                        queue.offer(children);
+                    }
+                }
+
+                // Check if siblings?
+                if (siblingScore == 2){
+                    return false;
+                }
+
+                // Add to level score
+                levelScore += siblingScore;
+            }
+
+            // Check if cousins or not!
+            if (levelScore == 2){
+                return true;
+            }
+            
+            // If one node on this level.
+            else if (levelScore == 1){
+                return false;
+            }
+
+            // No node, check next level!
+        }
+
+        return false;
+    }
+}
+
+```
+
+### Solution 2: Concise recursive BFS
+
+Recursively find x and y nodes and storing their details, then checking if they are cousins or not !
+
+```java
+// Using DFS
+class Solution {
+    // Defining x and y details!
+    // Required to check Cousin-ness!
+    int xLevel, yLevel;
+    TreeNode xParent, yParent;
+
+    public boolean isCousins(TreeNode root, int x, int y) {
+        dfs(root, 0, null, x, y); // Get x & y info!
+        
+        return (xLevel == yLevel && xParent != yParent);
+    }
+
+    // Get x and y details
+    // Finding using pre-order dfs.
+    private void dfs(TreeNode root, int level, TreeNode parent, int x, int y){
+        if (root == null){
+            return;
+        }
+
+        // Found x!
+        if (root.val == x){
+            xLevel = level;
+            xParent = parent;
+        }
+
+        // Found y!
+        if (root.val == y){
+            yLevel = level;
+            yParent = parent;
+        }
+
+        dfs(root.left, level+1, root, x, y);
+        dfs(root.right, level+1, root, x, y);
+    }
+}
+```
+
+## 9. [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/)
+
+Find a tree is mirror of itself!
+
+Kunal's solution! *(instructor)*
+
+```java
+ class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList();
+        
+        if (root != null){
+            queue.offer(root.left);
+            queue.offer(root.right);
+        }
+
+        while(!queue.isEmpty()){
+            TreeNode left = queue.poll();
+            TreeNode right = queue.poll();
+
+            // If odd no. of nodes!
+            if (left==null && right == null){
+                continue;
+            }
+
+            if (left==null || right == null){
+                return false;
+            }
+
+            if (left.val != right.val){
+                return false;
+            }
+
+
+            queue.offer(left.left);
+            queue.offer(right.right);
+            queue.offer(left.right);
+            queue.offer(right.left);
+        }
+
+        return true;
+    }
+ }
+```
