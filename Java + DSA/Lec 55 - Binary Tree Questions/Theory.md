@@ -617,7 +617,50 @@ class Solution {
 
         return helper(n1.left, n2.right) && helper(n1.right, n2.left);
     }
-
+****
 }
 ```
 
+## Depth First Search (DFS)
+
+In Depth First Search, we traverse the tree depth wise, starting from root to the leaf nodes.
+
+We've already implemented DFS while creating [**Binary Trees**](../Lec%2049%20-%20Binary%20Trees%20-%20Intro,%20traversal,%20code%20&%20BSTs/Theory.md).
+
+> **There are 3 variants of DFS**
+#### Implementation
+
+For each variant of DFS, we require a **"Stack"** to store the nodes in it, we just tweak it little to adapt pre, post or in-order DFS.
+
+#### 1. Pre-order traversal
+
+It goes in the order: **root -> left -> right.**
+
+Visiting the root node, then complete left subtree, then right subtree!
+
+##### When to use BFS?
+
+- When we've to do something at particular level, and then go down!
+- when left-right subtree operation is required after root node operations.
+
+
+#### 2. In-order traversal
+
+It goes in the order: **left -> root -> right.**
+
+Visiting the Left subtree, then visit the node, then complete right subtree.
+
+##### When to use BFS?
+
+- Traversing a *BST* in sorted order.
+- When building a copy of a tree.
+
+#### 3. Post-order traversal
+
+It goes in the order: **left -> right -> root.**
+
+Visiting the Left subtree, then the right subtree, and at last the rot node!
+
+##### When to use BFS?
+
+- When printing out a tree in a "bottom-up" manner.
