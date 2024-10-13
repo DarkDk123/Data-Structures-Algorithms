@@ -557,7 +557,7 @@ class Solution {
 
 Find a tree is mirror of itself!
 
-Kunal's solution! *(instructor)*
+### Solution 1: Kunal's solution! *(instructor)*
 
 ```java
  class Solution {
@@ -597,3 +597,27 @@ Kunal's solution! *(instructor)*
     }
  }
 ```
+
+
+### Solution 2: Kunal's solution! *(instructor)*
+
+DFS solution, using recursion!
+
+
+```java
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return helper(root, root); // Start with root!
+    }
+
+    private boolean helper(TreeNode n1, TreeNode n2){
+        if (n1 == null && n2 == null) return true;
+        else if (n1==null || n2==null) return false;
+        else if (n1.val != n2.val) return false;
+
+        return helper(n1.left, n2.right) && helper(n1.right, n2.left);
+    }
+
+}
+```
+
