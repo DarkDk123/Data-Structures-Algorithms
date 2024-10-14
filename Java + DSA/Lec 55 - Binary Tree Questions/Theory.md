@@ -599,7 +599,7 @@ Find a tree is mirror of itself!
 ```
 
 
-### Solution 2: Kunal's solution! *(instructor)*
+### Solution 2: DFS solution!
 
 DFS solution, using recursion!
 
@@ -617,7 +617,6 @@ class Solution {
 
         return helper(n1.left, n2.right) && helper(n1.right, n2.left);
     }
-****
 }
 ```
 
@@ -664,3 +663,233 @@ Visiting the Left subtree, then the right subtree, and at last the rot node!
 ##### When to use BFS?
 
 - When printing out a tree in a "bottom-up" manner.
+
+
+## 10. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/description/)
+
+Here, we know, diameter can be from any node to any other node. So, we need to traverse in bottom-up & Top-Down manner.
+
+This requires DFS traversal recursively.
+Here, we are doing Post-order traversal     type!
+
+```java
+class Solution {
+    int diameter = 0; // global variable
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        helper(root);
+
+        return diameter;
+    }
+
+
+    private int helper(TreeNode node){
+        // Return 0 depth,at leaf!
+        if (node == null){
+            return 0;
+        }
+        
+        // Go left and right subtree
+        int l = helper(node.left);
+        int r = helper(node.right);
+
+        // Update the main diameter
+        diameter = Math.max(diameter, l+r);
+
+        return Math.max(l,r) + 1;
+    }
+}
+```
+
+
+## 11. [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/)
+
+Inverting a tree, **swapping** all **left & right sub-trees**!
+
+It's a very popular & Easy question!
+Again the easy Post-order 😆
+
+```java
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null){
+            return root;
+        }
+
+        // Recursively inverting left-right subtrees!
+        TreeNode l = invertTree(root.left);
+        TreeNode r = invertTree(root.right);
+
+        // Inverting for this node...
+        root.left = r;
+        root.right = l;
+
+        return root;
+    }
+}
+```
+
+## 12 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+
+Again, the easy Post-order 😆.
+
+```java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null){
+            return 0;
+        }
+
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
+
+        // max height!
+        return Math.max(l, r) + 1;
+    }
+}
+```
+
+
+## 13 [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/)
+
+
+This is a problem we have already done while implementing Binary Trees!
+
+We have to recursively create the tree from the sorted array!
+
+```java
+class Solution {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return helper(nums, 0, nums.length-1);
+    }
+
+
+    public TreeNode helper(int[] nums, int start, int end){
+        if (start > end){
+            return null;
+        }
+
+        int mid = (start + end) / 2;
+        
+        TreeNode left = helper(nums, start, mid-1);
+        TreeNode right = helper(nums, mid+1, end);
+
+        TreeNode root = new TreeNode(nums[mid], left, right);
+
+        return root;
+    }
+
+}
+```
+
+## 14. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)
+
+😅 Now, it's started to get tough!!
+
+Let's Flatten a Binary Tree to a Linked List, as said in the question, we'll \
+do it using **Pre-order** traversal.
+
+
+### Solution 1: Flatten using Post-Order Traversal (Most common)
+
+Against the constraints of the question, Let's use **Post-Order** traversal first!
+```java
+class Solution {
+    public void flatten(TreeNode root) {
+        if (root == null) return;
+
+        flatten(root, null);
+    }
+
+    private TreeNode flatten(TreeNode node, TreeNode prev){
+        if (node == null) return prev;
+
+        // Recursively flatten right subtree
+        prev = flatten(node.right, prev);
+
+        // Recursively flatten left subtree
+        prev = flatten(node.left, prev);
+
+        // Connect current node with prev node
+        // by making prev as right child of node
+        node.right = prev;
+        node.left = null;
+        prev = node;
+
+        return prev;
+    }
+}
+```
+
+### Solution 2: Flattening using pre-order traversal !!
+
+In Pre-order we perform required operation on the **current node first**, after then we move on the left & right subtrees!
+
+Here, we'll place right subtree on the right most point of the left subtree,\
+then place that left-subtree on the right point again. 
+
+Repeating that until right point is null, moving to right continuously!
+
+```java
+// Doing pre-order
+class Solution {
+    public void flatten(TreeNode root) {
+        if (root==null){
+            return;
+        }
+        
+        // For current node
+        TreeNode left = root.left;
+        if (left != null){
+            while (left.right != null){
+                left = left.right;
+            }
+
+            left.right = root.right;
+            root.right = root.left;        
+        }
+
+        root.left = null;
+        
+        // Going on the next node!
+        flatten(root.right);
+    }
+}
+
+// It could also be done iteratively!
+```
+
+## 15. [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/description/)
+
+Here, it seems easy, we have to check every node, it should be like **`left_val < node_val < right_val`**.
+
+But, checking for other sibling values is also necessary!
+
+That's why we'll have a helper function, taking **low & high bound parameters**, & then validating on overall conditions!
+
+```java
+// Using pre-order, with low & high bounds check!
+class Solution {
+
+    public boolean isValidBST(TreeNode root) {
+        return helper(root, null, null);
+    }
+
+    private boolean helper(TreeNode root, Integer low, Integer high){
+        if (root==null){
+            return true;
+        }
+
+
+        // Check for the current node!
+        if (root.left != null && root.left.val >= root.val) return false;
+        else if(root.right != null && root.right.val <= root.val) return false;
+        // Checking for end-points
+        else if(low != null && root.val <= low) return false;
+        else if(high != null && root.val >= high) return false;
+
+        // Check for left & right sub-trees
+        return helper(root.left, low, root.val) && helper(root.right, root.val, high);
+    }
+}
+```
