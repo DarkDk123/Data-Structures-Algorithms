@@ -884,6 +884,7 @@ class Solution {
         // Check for the current node!
         if (root.left != null && root.left.val >= root.val) return false;
         else if(root.right != null && root.right.val <= root.val) return false;
+        // The above 2 conditions aren't actually required!
         // Checking for end-points
         else if(low != null && root.val <= low) return false;
         else if(high != null && root.val >= high) return false;
@@ -891,5 +892,73 @@ class Solution {
         // Check for left & right sub-trees
         return helper(root.left, low, root.val) && helper(root.right, root.val, high);
     }
+}
+```
+
+## 16. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)
+
+Here, we are finding common ancestors, so going in depth of a node is required, hence **Depth First Search** is required.
+
+And because we want to return the **p or q** node as soon as it is found, so **Pre-order traversal** is used here.
+
+
+```java
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null){
+            return null;
+        }
+
+        // If one node found! 
+        if (root.val == p.val || root.val == q.val ){
+            return root;
+        }
+
+        // Go left & right
+        TreeNode l = lowestCommonAncestor(root.left, p, q);
+        TreeNode r = lowestCommonAncestor(root.right, p, q);
+
+        // If found in both left & right sub-trees
+        // Current is the common ancestor.
+        if (l != null && r != null){
+            return root;
+        }
+
+        // Else one of them is!
+        return (l != null)?l:r;
+    }
+}
+```
+
+## 17.  [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+
+AS we have a *BST*, we can use **In-order traversal** to find elements order-wise, in a sorted manner!
+
+keeping a global *count* variable, and then return the Kth element!
+
+
+```java
+class Solution {
+    // Take a global counter
+    int count = 1;
+
+    public int kthSmallest(TreeNode root, int k) {
+        if (root==null){
+            return -1;
+        }
+
+        // Perform in-order for order-wise elements
+        int val = kthSmallest(root.left, k);
+
+        if (val != -1) return val; // If already found!
+        if (k == count) return root.val; // Current is Kth.
+
+        // increase counter & find in right subtree!
+        count++;
+
+        return kthSmallest(root.right, k);
+
+    }
+
 }
 ```
