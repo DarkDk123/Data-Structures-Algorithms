@@ -962,3 +962,43 @@ class Solution {
 
 }
 ```
+
+## 18 [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
+
+
+Constructing a BT from Pre-Order and In-Order Traversal, we are recursively creating the sub-trees, using **Depth first search**.
+
+This is the most commonly asked question! I did it using Pre-order traversal.
+
+Using integers as indices instead of slicing the arrays themselves in the recursive calls!
+
+```java
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return helper(preorder, inorder, 0, preorder.length-1, 0, inorder.length-1);
+    }
+
+    // ps, pe = preorder's start & end.
+    // is, ie = inorder's start & end.
+    private TreeNode helper(int[] preorder, int[] inorder, int ps, int pe, int is, int ie){
+        if (ps > pe) {
+            return null;  // No more nodes to process.
+        }
+
+        int root = preorder[ps];
+        int i;
+        for(i = 0; i <= ie-is; i++){
+            if (inorder[i+is] == root){        
+                break;
+            }
+        }
+
+
+        
+        TreeNode left = helper(preorder, inorder, ps+1, ps+i, is, is+i);
+        TreeNode right = helper(preorder, inorder, ps+i+1, pe, is+i+1, ie);
+
+        return new TreeNode(root, left, right);
+    }
+}
+```
