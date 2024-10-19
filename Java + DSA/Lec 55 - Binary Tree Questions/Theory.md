@@ -1002,3 +1002,67 @@ class Solution {
     }
 }
 ```
+
+## 19 [Serialize and Deserialize a Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+
+This is a pretty good question! but solution is trivial...
+
+The following solution is little inefficient because of ArrayList instead of StringBuilder. But i submitted a Python solution and it was good among it's competitions!
+
+```java
+public class Codec {
+    private static void serializeRec(TreeNode node, List<String> list) {
+        // Adding null to list if the node is null
+        if (node == null) {
+            list.add(null);
+            return;
+        }
+
+        // Adding node to list
+        list.add(String.valueOf(node.val));
+
+        // Doing a pre-order tree traversal for serialization
+        serializeRec(node.left, list);
+        serializeRec(node.right, list);
+    }
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        List<String> list = new ArrayList<>();
+        serializeRec(root, list);
+        return String.join(",", list);
+    }
+
+    public static TreeNode deserializeHelper(List<String> list) {
+        // pop first element from list
+        String val = list.remove(0);
+
+        // Return null when a null is encountered
+        if (val.charAt(0) == 'n') {
+            return null;
+        }
+
+        // Creating new Binary Tree Node from current value from list
+        TreeNode node = new TreeNode(Integer.parseInt(val));
+
+        // Doing a pre-order tree traversal for deserialization
+        node.left = deserializeHelper(list);
+        node.right = deserializeHelper(list);
+
+        // Return node if it exists
+        return node;
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        // Split the string by commas to recreate the list
+        List<String> list = new ArrayList<>(Arrays.asList(data.split(",")));
+        // Reverse the list to deserialize correctly
+        // Collections.reverse(list);
+        TreeNode node = deserializeHelper(list);
+        return node;
+    }
+
+}
+
+```
