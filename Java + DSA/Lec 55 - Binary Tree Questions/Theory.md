@@ -1005,6 +1005,8 @@ class Solution {
 
 ## 19 [Serialize and Deserialize a Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 
+
+### Solution 1: Using ArrayList but inefficient !
 This is a pretty good question! but solution is trivial...
 
 The following solution is little inefficient because of ArrayList instead of StringBuilder. But i submitted a Python solution and it was good among it's competitions!
@@ -1064,5 +1066,74 @@ public class Codec {
     }
 
 }
+
+```
+
+
+## Solution 2: Using StringBuilder, an Efficient & fast approach.
+
+```java
+public class Codec {
+    private static void serializeRec(TreeNode node, StringBuilder sb) {
+        // Adding null to sb if the node is null
+        if (node == null) {
+            sb.append("," + null);
+            return;
+        }
+
+        // Adding node to sb
+        sb.append("," + String.valueOf(node.val));
+
+        // Doing a pre-order tree traversal for serialization
+        serializeRec(node.left, sb);
+        serializeRec(node.right, sb);
+    }
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        serializeRec(root, sb);
+        return sb.substring(1);
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        TreeNode node = deserializeHelper(new StringBuilder(data));
+        return node;
+    }
+
+    private static int start = 0;
+    public static TreeNode deserializeHelper(StringBuilder sb) {
+        if (start >= sb.length()) {
+            return null;
+        }
+        // System.out.println(sb + "  " + start);
+        // Find the next comma and extract the value
+        int comma = sb.indexOf(",", start);
+        String val;
+
+        if (comma == -1) {  // Handle case where it's the last element (no comma)
+            val = sb.substring(start);
+            start = 0;
+        } else {
+            val = sb.substring(start, comma);
+            start = comma + 1;
+        }
+
+        // Check if the value is empty or null
+        if (val.isEmpty() || val.equals("null")) {
+            return null;
+        }
+
+        // Create a new TreeNode with the extracted value
+        TreeNode node = new TreeNode(Integer.parseInt(val));
+
+        // Recursively deserialize the left and right children
+        node.left = deserializeHelper(sb);
+        node.right = deserializeHelper(sb);
+
+        return node;
+    }
+} 
 
 ```
