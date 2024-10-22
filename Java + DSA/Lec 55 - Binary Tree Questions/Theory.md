@@ -1070,7 +1070,7 @@ public class Codec {
 ```
 
 
-## Solution 2: Using StringBuilder, an Efficient & fast approach.
+### Solution 2: Using StringBuilder, an Efficient & fast approach.
 
 ```java
 public class Codec {
@@ -1136,4 +1136,111 @@ public class Codec {
     }
 } 
 
+```
+
+## 20 [Path Sum](https://leetcode.com/problems/path-sum/description/)
+
+An easy level question asked in Amazon.
+
+Using DFS, checking condition on the leaf node!
+
+```java
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        // root is null
+        if (root==null){
+            return false;
+        }
+
+        // check leaf node
+        if (root.left == null && root.right == null){
+            return targetSum == root.val;
+        }
+
+        // Subtract current val
+        targetSum -= root.val;
+
+        // Go left-right
+        boolean left = hasPathSum(root.left, targetSum);
+        boolean right = hasPathSum(root.right, targetSum);
+
+        // Return answer
+        return left || right;
+    }
+}
+```
+
+## 21 [Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
+
+
+### Solution 1: This is my initial solution using StringBuilder (Couldn't get with the int!)
+
+```java
+class Solution {
+    public int sumNumbers(TreeNode root) {
+        return helper(root, new StringBuilder(), 0);
+    }
+
+    private int helper(TreeNode root, StringBuilder sb, int answer){
+        // End of the tree
+        if (root == null){
+            return answer;
+        }
+
+        // Append the current integer
+        sb.append(root.val);
+
+        // If leaf node.
+        if (root.left == null && root.right == null){
+            answer += Integer.parseInt(sb.toString());
+            sb.deleteCharAt(sb.length()-1);
+            return answer;
+        }
+
+
+        // Left & Right answers
+        int left = helper(root.left, sb, answer);
+        int right = helper(root.right, sb, answer);
+
+        // Remove on exit
+        sb.deleteCharAt(sb.length()-1);
+
+        return left + right;
+    }
+}
+```
+
+
+### Solution 2: Efficient Solution without StringBuilder!
+
+This is much efficient solution, only integer is used as answer!
+
+```java
+class Solution {
+    public int sumNumbers(TreeNode root) {
+        return helper(root, 0);
+    }
+
+    private int helper(TreeNode root, int answer){
+        // End of the tree
+        if (root == null){
+            return 0;
+        }
+
+        // Append the current integer
+        answer = (answer * 10) + root.val;
+
+        // If leaf node return answer;
+        if (root.left == null && root.right == null){
+            return answer;
+        }
+
+
+        // Left & Right answers
+        int left = helper(root.left, answer);
+        int right = helper(root.right, answer);
+
+        return left + right;
+    }
+}
 ```
