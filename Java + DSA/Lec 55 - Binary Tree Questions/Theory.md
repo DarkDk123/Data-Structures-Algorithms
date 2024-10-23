@@ -729,7 +729,7 @@ class Solution {
 }
 ```
 
-## 12 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+## 12. [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
 
 Again, the easy Post-order 😆.
 
@@ -750,7 +750,7 @@ class Solution {
 ```
 
 
-## 13 [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/)
+## 13. [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/)
 
 
 This is a problem we have already done while implementing Binary Trees!
@@ -963,7 +963,7 @@ class Solution {
 }
 ```
 
-## 18 [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
+## 18. [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
 
 
 Constructing a BT from Pre-Order and In-Order Traversal, we are recursively creating the sub-trees, using **Depth first search**.
@@ -1003,7 +1003,7 @@ class Solution {
 }
 ```
 
-## 19 [Serialize and Deserialize a Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+## 19. [Serialize and Deserialize a Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 
 
 ### Solution 1: Using ArrayList but inefficient !
@@ -1138,7 +1138,7 @@ public class Codec {
 
 ```
 
-## 20 [Path Sum](https://leetcode.com/problems/path-sum/description/)
+## 20. [Path Sum](https://leetcode.com/problems/path-sum/description/)
 
 An easy level question asked in Amazon.
 
@@ -1170,7 +1170,7 @@ class Solution {
 }
 ```
 
-## 21 [Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
+## 21. [Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)
 
 
 ### Solution 1: This is my initial solution using StringBuilder (Couldn't get with the int!)
@@ -1243,4 +1243,40 @@ class Solution {
         return left + right;
     }
 }
+```
+
+## 22. [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)
+
+The main hack here is we are ignoring the negative sums of subtrees.
+
+```java
+class Solution {
+    private int maxSum;
+
+    private int helper(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        // Calculate max sum of left and right subtrees, but ignore negative sums
+        int left = Math.max(helper(root.left), 0);
+        int right = Math.max(helper(root.right), 0);
+
+        // Calculate the current sum using both left and right subtrees + root node
+        int curSum = left + right + root.val;
+
+        // Update the global maxSum if the current sum is larger
+        maxSum = Math.max(curSum, maxSum);
+
+        // Return the maximum path sum extending to either left or right child
+        return Math.max(left, right) + root.val;
+    }
+
+    public int maxPathSum(TreeNode root) {
+        maxSum = Integer.MIN_VALUE; // Reset the maxSum before starting
+        helper(root); 
+        return maxSum;
+    }
+}
+
 ```
