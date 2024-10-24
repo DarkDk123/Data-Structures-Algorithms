@@ -1280,3 +1280,90 @@ class Solution {
 }
 
 ```
+
+## 23. Find given Path in the Tree
+
+As it's a custom question, similar to the previous questions we did.
+
+Given `root` node of a Tree and an Array containing a Path i.e. *[2, 3, 1, ...]*, we need to find whether this path exists in the tree or not.
+
+Simply we'll use DFS with a pointer for the Path Array.
+
+```java
+class Solution {
+    public boolean pathExists(TreeNode root, int[] path) {
+        if (root == null){
+            return path.length == 0;
+        }
+
+        return helper(root, path, 0);
+    }
+
+    private boolean helper(TreeNode root, int[] path, int idx) {
+        // Base case
+        if (root == null || idx >= path.length) {
+            return false;
+        }
+
+        // If current node opposes the path
+        else if (path[idx] != root.val){
+            return false;
+        }
+
+        // If current node is a leaf node
+        else if (root.left == null && root.right == null) {
+            // Check if this path exists
+            return idx == path.length - 1 && path[idx] == root.val;
+        } 
+        ![alt text](image.png)
+        // Search left & right subtrees
+        return helper(root.left, path, idx+1) || helper(root.right, path, idx+1);
+    }
+```
+
+## 24. Count Total Paths having given sum
+
+We're given a binary tree, we need to count all the paths *from any node to any other node*, having a given sum.
+
+These paths can be like :
+
+<img src="images/Count_Paths.png" width=60%> 
+
+Let's do it 🦔 :
+
+```java
+class Solution {
+    public int countPaths(Node node, int sum) {
+        List<Integer> path = new ArrayList<>();
+        return helper(node, sum, path);
+    }
+
+    private int helper(Node node, int sum, List<Integer> path) {
+        if (node == null) {
+            return 0;
+        }
+
+        path.add(node.val);
+        int count = 0;
+        int pathSum = 0;
+
+        // how many paths I can make
+        ListIterator<Integer> itr = path.listIterator(path.size());
+        while (itr.hashPrevious()) {
+            pathSum += itr.previous();
+
+            if (pathSum == sum) {
+                count++;
+            }
+        }
+
+        count += helper(node.left, sum, path) + helper(node.right, sum, path);
+
+        // backtrack
+        path.remove(path.size() - 1);
+        return count;
+
+    }
+}
+
+```
