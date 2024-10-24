@@ -1349,7 +1349,7 @@ class Solution {
 
         // how many paths I can make
         ListIterator<Integer> itr = path.listIterator(path.size());
-        while (itr.hashPrevious()) {
+        while (itr.hasPrevious()) {
             pathSum += itr.previous();
 
             if (pathSum == sum) {
