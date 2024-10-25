@@ -1367,3 +1367,49 @@ class Solution {
 }
 
 ```
+
+## 25. Find all the paths having given sum
+
+This is an extension question of the previous one!
+
+Here, we need to return all the paths, not just the count!
+
+```java
+class Solution {
+    public ArrayList<ArrayList<Integer>> getPaths(Node node, int sum) {
+        List<Integer> path = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
+        helper(node, sum, path, ans);
+
+        return ans;
+    }
+
+    private int helper(Node node, int sum, List<Integer> path, List<List<Integer>> ans) {
+        if (node == null) {
+            return 0;
+        }
+
+        path.add(node.val);
+        int count = 0;
+        int pathSum = 0;
+
+        // how many paths I can make
+        ListIterator<Integer> itr = path.listIterator(path.size());
+        while (itr.hasPrevious()) {
+            pathSum += itr.previous();
+
+            if (pathSum == sum) {
+                ans.add(new ArrayList<>(path)); // Also add to answer
+                count++;
+            }
+        }
+
+        count += helper(node.left, sum, path) + helper(node.right, sum, path);
+
+        // backtrack
+        path.remove(path.size() - 1);
+        return count;
+
+    }
+}
+```
