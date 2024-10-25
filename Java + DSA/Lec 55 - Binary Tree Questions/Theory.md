@@ -1413,3 +1413,14 @@ class Solution {
     }
 }
 ```
+
+# We're done !
+
+Now that we have covered all the questions, we still require practice of common Tree Questions, and refreshing all the approaches time to time!
+
+
+Here are few resources for Top Tree Questions :
+
+- GFG : Top 50 [Tree Questions](https://www.geeksforgeeks.org/top-50-tree-coding-problems-for-interviews/).
+
+- This course's *(DSA with Kunal)* assignment: [Tree Assignment Questions](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/17-trees.md).
