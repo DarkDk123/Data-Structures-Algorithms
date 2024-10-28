@@ -27,3 +27,21 @@ But still, when removing the first or last element (as per the criteria), we req
 - **Efficiency**: Heaps offer (O(1)) access to the min/max element, and (O(log n)) for insertion/deletion due to their balanced structure.
 
 Heaps are perfect for priority queues, sorting (heapsort), and managing tasks requiring quick access to the highest/lowest priority items.
+
+## Code Implementation
+
+Implemented MinHeap here : [MinHeap](./Heaps.java#L11).
+
+---
+#### I also understood some benefits of Heaps over BSTs for these type of problems.
+
+|  Type  | BST (*) | Heap |
+|--------|---------|------|
+| Insert | average | O(1) | O(log n) |
+| Insert | worst   | O(log n) | O(log n) or O(n) (***) |
+| Find any | worst  | O(log n) | O(n) |
+| Find max | worst  | O(1) (**)| O(1) |
+| Create  | worst  | O(n log n)| O(n) |
+| Delete  | worst  | O(log n) | O(log n) |
+
+Ref: [StackOverflow Solution](https://stackoverflow.com/a/29548834).
