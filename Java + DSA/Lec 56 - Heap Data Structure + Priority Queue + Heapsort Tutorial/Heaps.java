@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Heaps - A data structure storing items in a tree structure, with the property
  * that the
@@ -16,6 +18,9 @@ public class Heaps {
         while (heap.size() > 0) {
             System.out.print(heap.pop() + ", ");
         }
+
+        System.out.println(
+                "\nSorted With HeapSort: " + Arrays.toString(MinHeap.heapSort(new Integer[] { 3, 2, 43, 5, 32 })));
     }
 }
 
@@ -47,11 +52,11 @@ class MinHeap<T extends Comparable<T>> {
     // Build from array
     public boolean buildHeap(T[] array) {
         // Push all elements to the heap
-        
+
         // for (T e : array) {
-        //     push(e);
+        // push(e);
         // }
-        
+
         // Using Heapify | O(n)
         this.array = array;
         heapify(array);
@@ -127,7 +132,7 @@ class MinHeap<T extends Comparable<T>> {
     public int size() {
         return size;
     }
-    
+
     public void heapify(T[] array) {
         this.array = array;
         this.size = array.length;
@@ -136,6 +141,21 @@ class MinHeap<T extends Comparable<T>> {
         for (int i = (size / 2) - 1; i >= 0; i--) {
             downHeap(i);
         }
+    }
+
+    // Generic static method for HeapSort!
+    public static <T extends Comparable<T>> T[] heapSort(T[] array) {
+        MinHeap<T> heap = new MinHeap<>(array.length);
+
+        for (T element : array) {
+            heap.push(element);
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = heap.pop();
+        }
+
+        return array;
     }
 
     // Getting parent, left & right nodes with indexes

@@ -30,7 +30,7 @@ Heaps are perfect for priority queues, sorting (heapsort), and managing tasks re
 
 ## Code Implementation
 
-Implemented MinHeap here : [MinHeap](./Heaps.java#L11).
+Implemented MinHeap here : [MinHeap](./Heaps.java#L27).
 
 ---
 #### I also understood some benefits of Heaps over BSTs for these type of problems.
@@ -45,3 +45,18 @@ Implemented MinHeap here : [MinHeap](./Heaps.java#L11).
 | Delete  | worst  | O(log n) | O(log n) |
 
 Ref: [StackOverflow Solution](https://stackoverflow.com/a/29548834).
+
+
+## Priority Queues
+
+To be shocked Priority Queues are the same thing as Heaps!
+
+As there name suggest, they add elements & pop them based on their priorities.
+
+Like in min heap, the priority is to be minimum!
+
+## Heap Sort
+
+Heap sort is just creating a heap from an array, and then popping all items one by one! 😆
+
+It has a complexity of ***O(n log n)***. Implemented [here](./Heaps.java#L147).
